@@ -1,0 +1,2 @@
+source;share/imu_calib/environment/ament_prefix_path.sh
+source;share/imu_calib/environment/path.sh

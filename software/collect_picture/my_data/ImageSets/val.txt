@@ -1,0 +1,2 @@
+/home/ubuntu/software/collect_picture/my_data/JPEGImages/image_4.jpg
+/home/ubuntu/software/collect_picture/my_data/JPEGImages/image_9.jpg

@@ -1,0 +1,3 @@
+[console_scripts]
+calibrate_angular = calibration.calibrate_angular:main
+calibrate_linear = calibration.calibrate_linear:main

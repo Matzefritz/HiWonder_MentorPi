@@ -1,0 +1,46 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ros_robot_controller_msgs/msg/PWMServoState",
+      "fields": [
+        {
+          "name": "id",
+          "type": {
+            "type_id": 149,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "position",
+          "type": {
+            "type_id": 149,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "offset",
+          "type": {
+            "type_id": 148,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "ros_robot_controller_msgs/msg/PWMServoState",
+      "hash_string": "RIHS01_d2da03839b883cda850a306576f5e2b4cf4707cf37184333105eb049a583996d"
+    }
+  ]
+}

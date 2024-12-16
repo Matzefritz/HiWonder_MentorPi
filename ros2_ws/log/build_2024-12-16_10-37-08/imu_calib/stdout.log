@@ -1,0 +1,81 @@
+-- The C compiler identification is GNU 13.2.0
+-- The CXX compiler identification is GNU 13.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Found yaml_cpp_vendor: 9.0.0 (/opt/ros/jazzy/share/yaml_cpp_vendor/cmake)
+-- Setting yaml-cpp_DIR to: '/opt/ros/jazzy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/share/cmake/yaml-cpp'
+-- Found ament_lint_auto: 0.17.1 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/ro01/workspace/ros2_ws/src/imu_calib/include;/home/ro01/workspace/ros2_ws/src/imu_calib/src
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (3.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ro01/workspace/ros2_ws/build/imu_calib
+[ 12%] [32mBuilding CXX object CMakeFiles/accel_calib.dir/src/accel_calib.cpp.o[0m
+[ 25%] [32m[1mLinking CXX static library libaccel_calib.a[0m
+[ 25%] Built target accel_calib
+[ 37%] [32mBuilding CXX object CMakeFiles/apply_calib.dir/src/apply_calib.cpp.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/do_calib.dir/src/do_calib_node.cpp.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/do_calib.dir/src/do_calib.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/apply_calib.dir/src/apply_calib_node.cpp.o[0m
+[ 87%] [32m[1mLinking CXX executable apply_calib[0m
+[ 87%] Built target apply_calib
+[100%] [32m[1mLinking CXX executable do_calib[0m
+[100%] Built target do_calib
+-- Install configuration: ""
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/lib/imu_calib/do_calib
+-- Set non-toolchain portion of runtime path of "/home/ro01/workspace/ros2_ws/install/imu_calib/lib/imu_calib/do_calib" to ""
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/lib/imu_calib/apply_calib
+-- Set non-toolchain portion of runtime path of "/home/ro01/workspace/ros2_ws/install/imu_calib/lib/imu_calib/apply_calib" to ""
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/include/
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/include//imu_calib
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/include//imu_calib/do_calib.h
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/include//imu_calib/accel_calib.h
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/include//imu_calib/apply_calib.h
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/ament_index/resource_index/package_run_dependencies/imu_calib
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/ament_index/resource_index/parent_prefix_path/imu_calib
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/environment/ament_prefix_path.sh
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/environment/ament_prefix_path.dsv
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/environment/path.sh
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/environment/path.dsv
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/local_setup.bash
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/local_setup.sh
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/local_setup.zsh
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/local_setup.dsv
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/package.dsv
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/ament_index/resource_index/packages/imu_calib
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/cmake/imu_calibConfig.cmake
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/cmake/imu_calibConfig-version.cmake
+-- Installing: /home/ro01/workspace/ros2_ws/install/imu_calib/share/imu_calib/package.xml

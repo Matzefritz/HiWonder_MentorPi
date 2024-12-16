@@ -1,0 +1,8 @@
+/home/ubuntu/software/collect_picture/my_data/JPEGImages/image_8.jpg
+/home/ubuntu/software/collect_picture/my_data/JPEGImages/image_3.jpg
+/home/ubuntu/software/collect_picture/my_data/JPEGImages/image_7.jpg
+/home/ubuntu/software/collect_picture/my_data/JPEGImages/image_1.jpg
+/home/ubuntu/software/collect_picture/my_data/JPEGImages/image_6.jpg
+/home/ubuntu/software/collect_picture/my_data/JPEGImages/image_2.jpg
+/home/ubuntu/software/collect_picture/my_data/JPEGImages/image_5.jpg
+/home/ubuntu/software/collect_picture/my_data/JPEGImages/image_10.jpg

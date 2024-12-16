@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-75276f624d964e10fa0e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "imu_calib",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "accel_calib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-accel_calib-21d46beba2ea2eca28ce.json",
+					"name" : "accel_calib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apply_calib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apply_calib-8cd70c47f693d5884227.json",
+					"name" : "apply_calib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "do_calib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-do_calib-83be578818374de5c3dd.json",
+					"name" : "do_calib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "imu_calib_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-imu_calib_uninstall-faa30c52a569f83679c1.json",
+					"name" : "imu_calib_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-a5611cf6c3e5e1cc22eb.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ro01/workspace/ros2_ws/build/imu_calib",
+		"source" : "/home/ro01/workspace/ros2_ws/src/imu_calib"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

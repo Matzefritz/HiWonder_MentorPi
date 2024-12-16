@@ -1,0 +1,10 @@
+software/collect_picture/my_data/JPEGImages/image_4.jpg
+software/collect_picture/my_data/JPEGImages/image_9.jpg
+software/collect_picture/my_data/JPEGImages/image_8.jpg
+software/collect_picture/my_data/JPEGImages/image_3.jpg
+software/collect_picture/my_data/JPEGImages/image_7.jpg
+software/collect_picture/my_data/JPEGImages/image_1.jpg
+software/collect_picture/my_data/JPEGImages/image_6.jpg
+software/collect_picture/my_data/JPEGImages/image_2.jpg
+software/collect_picture/my_data/JPEGImages/image_5.jpg
+software/collect_picture/my_data/JPEGImages/image_10.jpg

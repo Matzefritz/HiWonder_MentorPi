@@ -1,0 +1,4 @@
+[console_scripts]
+joystick_control = peripherals.joystick_control:main
+teleop_key_control = peripherals.teleop_key_control:main
+tf_broadcaster_imu = peripherals.tf_broadcaster_imu:main

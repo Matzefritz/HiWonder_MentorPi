@@ -1,0 +1,14 @@
+source;share/ros_robot_controller_msgs/hook/cmake_prefix_path.ps1
+source;share/ros_robot_controller_msgs/hook/cmake_prefix_path.dsv
+source;share/ros_robot_controller_msgs/hook/cmake_prefix_path.sh
+source;share/ros_robot_controller_msgs/hook/ld_library_path_lib.ps1
+source;share/ros_robot_controller_msgs/hook/ld_library_path_lib.dsv
+source;share/ros_robot_controller_msgs/hook/ld_library_path_lib.sh
+source;share/ros_robot_controller_msgs/hook/pythonpath.ps1
+source;share/ros_robot_controller_msgs/hook/pythonpath.dsv
+source;share/ros_robot_controller_msgs/hook/pythonpath.sh
+source;share/ros_robot_controller_msgs/local_setup.bash
+source;share/ros_robot_controller_msgs/local_setup.dsv
+source;share/ros_robot_controller_msgs/local_setup.ps1
+source;share/ros_robot_controller_msgs/local_setup.sh
+source;share/ros_robot_controller_msgs/local_setup.zsh

@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ros_robot_controller_msgs/msg/BusServoState.msg
+// generated code does not contain a copyright notice
+
+
+module ros_robot_controller_msgs {
+  module msg {
+    struct BusServoState {
+      sequence<uint16> present_id;
+
+      sequence<uint16> target_id;
+
+      sequence<uint16> position;
+
+      sequence<int16> offset;
+
+      sequence<uint16> voltage;
+
+      sequence<uint16> temperature;
+
+      sequence<uint16> position_limit;
+
+      sequence<uint16> voltage_limit;
+
+      sequence<uint16> max_temperature_limit;
+
+      sequence<uint16> enable_torque;
+
+      sequence<uint16> save_offset;
+
+      sequence<uint16> stop;
+    };
+  };
+};

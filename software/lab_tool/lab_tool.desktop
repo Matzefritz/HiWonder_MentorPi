@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=LAB TOOL
+Comment=LAB TOOL Program
+Encoding=UTF-8
+Exec=bash /home/hiwonder/software/lab_tool/lab_tool.sh
+Terminal=false
+MultipleArgs=false
+Type=Application
+Categories=Application;Development;
+StartupNotify=true
+Icon=/home/hiwonder/software/lab_tool/resources/lab.ico

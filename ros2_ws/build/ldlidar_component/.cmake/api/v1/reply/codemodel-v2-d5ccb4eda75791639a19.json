@@ -1,0 +1,130 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-6147f5d836c3f840be34.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3,
+						4
+					]
+				},
+				{
+					"build" : "ldlidar_driver",
+					"jsonFile" : "directory-ldlidar_driver-Release-e8f63ca38c946bc5f41f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "ldlidar_driver",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ldlidar_component",
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3,
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "ldlidar",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_ldlidar_component_files::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_ldlidar_component_files-Release-3478c803e3789f3016d7.json",
+					"name" : "all_ldlidar_component_files",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ldlidar::@1c727bbc7d1d8fcbe4d9",
+					"jsonFile" : "target-ldlidar-Release-c65abaf685625b8d0b9b.json",
+					"name" : "ldlidar",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ldlidar_component::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ldlidar_component-Release-166e0410e9ef70b7e9ab.json",
+					"name" : "ldlidar_component",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ldlidar_component_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ldlidar_component_uninstall-Release-36f1b456cd4cb0a657a7.json",
+					"name" : "ldlidar_component_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-8a5eefecfe83b4e18e36.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ro01/workspace/ros2_ws/build/ldlidar_component",
+		"source" : "/home/ro01/workspace/ros2_ws/src/ldrobot-lidar-ros2/ldlidar_component"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

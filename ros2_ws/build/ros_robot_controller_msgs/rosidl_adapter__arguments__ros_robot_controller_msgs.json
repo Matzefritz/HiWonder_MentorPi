@@ -1,0 +1,24 @@
+{
+  "package_name": "ros_robot_controller_msgs",
+  "non_idl_tuples": [
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/BusServoState.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/ButtonState.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/BuzzerState.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/LedState.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/MotorState.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/MotorsState.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/PWMServoState.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/Sbus.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/OLEDState.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/SetBusServoState.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/RGBStates.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/RGBState.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/ServoPosition.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/ServosPosition.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/SetPWMServoState.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/GetBusServoCmd.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:msg/GetPWMServoCmd.msg",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:srv/GetBusServoState.srv",
+    "/home/ro01/workspace/ros2_ws/src/driver/ros_robot_controller_msgs:srv/GetPWMServoState.srv"
+  ]
+}

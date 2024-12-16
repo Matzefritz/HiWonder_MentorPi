@@ -1,0 +1,4 @@
+source;share/ldlidar_component/local_setup.bash
+source;share/ldlidar_component/local_setup.dsv
+source;share/ldlidar_component/local_setup.sh
+source;share/ldlidar_component/local_setup.zsh

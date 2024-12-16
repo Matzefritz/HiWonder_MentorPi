@@ -1,0 +1,9 @@
+train: /home/hiwonder/facemask/ImageSets/train.txt
+val: /home/hiwonder/facemask/ImageSets/val.txt
+test: /home/hiwonder/facemask/ImageSets/test.txt
+
+# number of classes
+nc: 2
+
+# class names
+names: ['mask', 'nomask']

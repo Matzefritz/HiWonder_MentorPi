@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Collect Picture
+Comment=Collect Picture Program
+Encoding=UTF-8
+Exec=bash /home/hiwonder/software/collect_picture/collect_picture.sh
+Terminal=false
+MultipleArgs=false
+Type=Application
+Categories=Application;Development;
+StartupNotify=true
+Icon=/home/hiwonder/software/collect_picture/resources/app.png

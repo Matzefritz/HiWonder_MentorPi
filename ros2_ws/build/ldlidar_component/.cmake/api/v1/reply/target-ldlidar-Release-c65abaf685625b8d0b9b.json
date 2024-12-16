@@ -1,0 +1,174 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "ldlidar_driver/libldlidar.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_compile_options",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"ldlidar_driver/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 15,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 26,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O3 -DNDEBUG -std=gnu++14 -fPIC"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wno-deprecated-declarations"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "/home/ro01/workspace/ros2_ws/src/ldrobot-lidar-ros2/ldlidar_component/ldlidar_driver/include/core"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/ro01/workspace/ros2_ws/src/ldrobot-lidar-ros2/ldlidar_component/ldlidar_driver/include/dataprocess"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/ro01/workspace/ros2_ws/src/ldrobot-lidar-ros2/ldlidar_component/ldlidar_driver/include/filter"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/ro01/workspace/ros2_ws/src/ldrobot-lidar-ros2/ldlidar_component/ldlidar_driver/include/logger"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/ro01/workspace/ros2_ws/src/ldrobot-lidar-ros2/ldlidar_component/ldlidar_driver/include/networkcom"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/ro01/workspace/ros2_ws/src/ldrobot-lidar-ros2/ldlidar_component/ldlidar_driver/include/serialcom"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5
+			]
+		}
+	],
+	"id" : "ldlidar::@1c727bbc7d1d8fcbe4d9",
+	"name" : "ldlidar",
+	"nameOnDisk" : "libldlidar.a",
+	"paths" : 
+	{
+		"build" : "ldlidar_driver",
+		"source" : "ldlidar_driver"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ldlidar_driver/src/core/ldlidar_driver.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ldlidar_driver/src/dataprocess/lipkg.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ldlidar_driver/src/filter/tofbf.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ldlidar_driver/src/logger/log_module.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ldlidar_driver/src/networkcom/network_socket_interface_linux.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "ldlidar_driver/src/serialcom/serial_interface_linux.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

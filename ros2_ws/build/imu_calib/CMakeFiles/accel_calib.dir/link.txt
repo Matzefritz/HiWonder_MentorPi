@@ -1,0 +1,2 @@
+/usr/bin/ar qc libaccel_calib.a CMakeFiles/accel_calib.dir/src/accel_calib.cpp.o
+/usr/bin/ranlib libaccel_calib.a

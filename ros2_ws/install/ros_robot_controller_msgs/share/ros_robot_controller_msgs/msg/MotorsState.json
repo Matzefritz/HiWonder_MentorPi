@@ -1,0 +1,56 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ros_robot_controller_msgs/msg/MotorsState",
+      "fields": [
+        {
+          "name": "data",
+          "type": {
+            "type_id": 145,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "ros_robot_controller_msgs/msg/MotorState"
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "ros_robot_controller_msgs/msg/MotorState",
+        "fields": [
+          {
+            "name": "id",
+            "type": {
+              "type_id": 5,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "rps",
+            "type": {
+              "type_id": 11,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "ros_robot_controller_msgs/msg/MotorsState",
+      "hash_string": "RIHS01_5c6608fd2c4a57d90e50e2ecc7810e1a97b1559056951b3f21ac96c08744a1ef"
+    },
+    {
+      "type_name": "ros_robot_controller_msgs/msg/MotorState",
+      "hash_string": "RIHS01_b224897b018b13e7dec8f803457996432953bc42922ec9a30501f45e4fcc614e"
+    }
+  ]
+}

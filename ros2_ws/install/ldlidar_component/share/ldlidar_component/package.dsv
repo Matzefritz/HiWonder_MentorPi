@@ -1,0 +1,11 @@
+source;share/ldlidar_component/hook/cmake_prefix_path.ps1
+source;share/ldlidar_component/hook/cmake_prefix_path.dsv
+source;share/ldlidar_component/hook/cmake_prefix_path.sh
+source;share/ldlidar_component/hook/ld_library_path_lib.ps1
+source;share/ldlidar_component/hook/ld_library_path_lib.dsv
+source;share/ldlidar_component/hook/ld_library_path_lib.sh
+source;share/ldlidar_component/local_setup.bash
+source;share/ldlidar_component/local_setup.dsv
+source;share/ldlidar_component/local_setup.ps1
+source;share/ldlidar_component/local_setup.sh
+source;share/ldlidar_component/local_setup.zsh

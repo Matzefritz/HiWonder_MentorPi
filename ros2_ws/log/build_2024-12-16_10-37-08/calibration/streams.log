@@ -1,0 +1,47 @@
+[3.056s] Invoking command in '/home/ro01/workspace/ros2_ws/src/calibration': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/calibration/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/calibration build --build-base /home/ro01/workspace/ros2_ws/build/calibration/build install --record /home/ro01/workspace/ros2_ws/build/calibration/install.log --single-version-externally-managed install_data
+[3.500s] running egg_info
+[3.500s] creating ../../build/calibration/calibration.egg-info
+[3.529s] writing ../../build/calibration/calibration.egg-info/PKG-INFO
+[3.530s] writing dependency_links to ../../build/calibration/calibration.egg-info/dependency_links.txt
+[3.531s] writing entry points to ../../build/calibration/calibration.egg-info/entry_points.txt
+[3.532s] writing requirements to ../../build/calibration/calibration.egg-info/requires.txt
+[3.532s] writing top-level names to ../../build/calibration/calibration.egg-info/top_level.txt
+[3.532s] writing manifest file '../../build/calibration/calibration.egg-info/SOURCES.txt'
+[3.592s] reading manifest file '../../build/calibration/calibration.egg-info/SOURCES.txt'
+[3.594s] writing manifest file '../../build/calibration/calibration.egg-info/SOURCES.txt'
+[3.595s] running build
+[3.595s] running build_py
+[3.595s] creating /home/ro01/workspace/ros2_ws/build/calibration/build
+[3.595s] creating /home/ro01/workspace/ros2_ws/build/calibration/build/lib
+[3.595s] creating /home/ro01/workspace/ros2_ws/build/calibration/build/lib/calibration
+[3.596s] copying calibration/__init__.py -> /home/ro01/workspace/ros2_ws/build/calibration/build/lib/calibration
+[3.596s] copying calibration/calibrate_angular.py -> /home/ro01/workspace/ros2_ws/build/calibration/build/lib/calibration
+[3.597s] copying calibration/calibrate_linear.py -> /home/ro01/workspace/ros2_ws/build/calibration/build/lib/calibration
+[3.599s] running install
+[3.612s] running install_lib
+[3.642s] creating /home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages/calibration
+[3.642s] copying /home/ro01/workspace/ros2_ws/build/calibration/build/lib/calibration/__init__.py -> /home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages/calibration
+[3.642s] copying /home/ro01/workspace/ros2_ws/build/calibration/build/lib/calibration/calibrate_angular.py -> /home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages/calibration
+[3.642s] copying /home/ro01/workspace/ros2_ws/build/calibration/build/lib/calibration/calibrate_linear.py -> /home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages/calibration
+[3.643s] byte-compiling /home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages/calibration/__init__.py to __init__.cpython-312.pyc
+[3.644s] byte-compiling /home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages/calibration/calibrate_angular.py to calibrate_angular.cpython-312.pyc
+[3.647s] byte-compiling /home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages/calibration/calibrate_linear.py to calibrate_linear.cpython-312.pyc
+[3.648s] running install_data
+[3.649s] creating /home/ro01/workspace/ros2_ws/install/calibration/share/ament_index
+[3.650s] creating /home/ro01/workspace/ros2_ws/install/calibration/share/ament_index/resource_index
+[3.651s] creating /home/ro01/workspace/ros2_ws/install/calibration/share/ament_index/resource_index/packages
+[3.651s] copying resource/calibration -> /home/ro01/workspace/ros2_ws/install/calibration/share/ament_index/resource_index/packages
+[3.651s] copying package.xml -> /home/ro01/workspace/ros2_ws/install/calibration/share/calibration
+[3.651s] creating /home/ro01/workspace/ros2_ws/install/calibration/share/calibration/launch
+[3.651s] copying launch/linear_calib.launch.py -> /home/ro01/workspace/ros2_ws/install/calibration/share/calibration/launch
+[3.651s] copying launch/angular_calib.launch.py -> /home/ro01/workspace/ros2_ws/install/calibration/share/calibration/launch
+[3.651s] creating /home/ro01/workspace/ros2_ws/install/calibration/share/calibration/config
+[3.651s] copying config/imu_calib.yaml -> /home/ro01/workspace/ros2_ws/install/calibration/share/calibration/config
+[3.656s] copying config/bk.yaml -> /home/ro01/workspace/ros2_ws/install/calibration/share/calibration/config
+[3.659s] running install_egg_info
+[3.694s] Copying ../../build/calibration/calibration.egg-info to /home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages/calibration-0.0.0-py3.12.egg-info
+[3.698s] running install_scripts
+[3.917s] Installing calibrate_angular script to /home/ro01/workspace/ros2_ws/install/calibration/lib/calibration
+[3.917s] Installing calibrate_linear script to /home/ro01/workspace/ros2_ws/install/calibration/lib/calibration
+[3.918s] writing list of installed files to '/home/ro01/workspace/ros2_ws/build/calibration/install.log'
+[4.074s] Invoked command in '/home/ro01/workspace/ros2_ws/src/calibration' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/calibration/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/calibration build --build-base /home/ro01/workspace/ros2_ws/build/calibration/build install --record /home/ro01/workspace/ros2_ws/build/calibration/install.log --single-version-externally-managed install_data

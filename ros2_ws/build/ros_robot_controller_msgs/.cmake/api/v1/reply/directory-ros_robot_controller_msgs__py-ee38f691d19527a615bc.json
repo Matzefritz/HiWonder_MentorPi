@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "ros_robot_controller_msgs__py",
+		"source" : "/home/ro01/workspace/ros2_ws/build/ros_robot_controller_msgs/ros_robot_controller_msgs__py"
+	}
+}

@@ -1,0 +1,6 @@
+source;share/sdk/hook/pythonpath.ps1
+source;share/sdk/hook/pythonpath.dsv
+source;share/sdk/hook/pythonpath.sh
+source;share/sdk/hook/ament_prefix_path.ps1
+source;share/sdk/hook/ament_prefix_path.dsv
+source;share/sdk/hook/ament_prefix_path.sh

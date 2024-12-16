@@ -1,0 +1,166 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "ros_robot_controller_msgs/msg/SetBusServoState",
+      "fields": [
+        {
+          "name": "state",
+          "type": {
+            "type_id": 145,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "ros_robot_controller_msgs/msg/BusServoState"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "duration",
+          "type": {
+            "type_id": 11,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "ros_robot_controller_msgs/msg/BusServoState",
+        "fields": [
+          {
+            "name": "present_id",
+            "type": {
+              "type_id": 149,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "target_id",
+            "type": {
+              "type_id": 149,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "position",
+            "type": {
+              "type_id": 149,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "offset",
+            "type": {
+              "type_id": 148,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "voltage",
+            "type": {
+              "type_id": 149,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "temperature",
+            "type": {
+              "type_id": 149,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "position_limit",
+            "type": {
+              "type_id": 149,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "voltage_limit",
+            "type": {
+              "type_id": 149,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "max_temperature_limit",
+            "type": {
+              "type_id": 149,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "enable_torque",
+            "type": {
+              "type_id": 149,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "save_offset",
+            "type": {
+              "type_id": 149,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "stop",
+            "type": {
+              "type_id": 149,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "ros_robot_controller_msgs/msg/SetBusServoState",
+      "hash_string": "RIHS01_71c09c08f3ffc7151134ba38c598b323b0b198fa8044ec64ab0a551cdb7e6325"
+    },
+    {
+      "type_name": "ros_robot_controller_msgs/msg/BusServoState",
+      "hash_string": "RIHS01_bd5556beec8806955dd3fb447968df827d2f8a10bef64b0159371bb1adad629f"
+    }
+  ]
+}

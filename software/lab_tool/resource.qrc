@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="image">
+    <file>resources/cielab-color.jpg</file>
+  </qresource>
+</RCC>

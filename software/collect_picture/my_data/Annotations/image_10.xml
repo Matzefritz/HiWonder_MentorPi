@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>image_10.jpg</filename>
+	<path>/home/ubuntu/software/collect_picture/my_data/JPEGImages/image_10.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>turn_around</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>206</xmin>
+			<ymin>53</ymin>
+			<xmax>529</xmax>
+			<ymax>243</ymax>
+		</bndbox>
+	</object>
+</annotation>

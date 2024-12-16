@@ -1,0 +1,3 @@
+[console_scripts]
+init_pose = controller.init_pose:main
+odom_publisher = controller.odom_publisher_node:main

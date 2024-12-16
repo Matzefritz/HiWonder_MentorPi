@@ -1,0 +1,56 @@
+[3.044s] Invoking command in '/home/ro01/workspace/ros2_ws/src/driver/controller': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/controller build --build-base /home/ro01/workspace/ros2_ws/build/controller/build install --record /home/ro01/workspace/ros2_ws/build/controller/install.log --single-version-externally-managed install_data
+[3.487s] running egg_info
+[3.488s] creating ../../../build/controller/controller.egg-info
+[3.519s] writing ../../../build/controller/controller.egg-info/PKG-INFO
+[3.520s] writing dependency_links to ../../../build/controller/controller.egg-info/dependency_links.txt
+[3.521s] writing entry points to ../../../build/controller/controller.egg-info/entry_points.txt
+[3.524s] writing requirements to ../../../build/controller/controller.egg-info/requires.txt
+[3.524s] writing top-level names to ../../../build/controller/controller.egg-info/top_level.txt
+[3.524s] writing manifest file '../../../build/controller/controller.egg-info/SOURCES.txt'
+[3.587s] reading manifest file '../../../build/controller/controller.egg-info/SOURCES.txt'
+[3.588s] writing manifest file '../../../build/controller/controller.egg-info/SOURCES.txt'
+[3.589s] running build
+[3.589s] running build_py
+[3.589s] creating /home/ro01/workspace/ros2_ws/build/controller/build
+[3.590s] creating /home/ro01/workspace/ros2_ws/build/controller/build/lib
+[3.590s] creating /home/ro01/workspace/ros2_ws/build/controller/build/lib/controller
+[3.590s] copying controller/ackermann.py -> /home/ro01/workspace/ros2_ws/build/controller/build/lib/controller
+[3.592s] copying controller/__init__.py -> /home/ro01/workspace/ros2_ws/build/controller/build/lib/controller
+[3.592s] copying controller/mecanum.py -> /home/ro01/workspace/ros2_ws/build/controller/build/lib/controller
+[3.593s] copying controller/init_pose.py -> /home/ro01/workspace/ros2_ws/build/controller/build/lib/controller
+[3.594s] copying controller/odom_publisher_node.py -> /home/ro01/workspace/ros2_ws/build/controller/build/lib/controller
+[3.595s] running install
+[3.608s] running install_lib
+[3.640s] creating /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller
+[3.642s] copying /home/ro01/workspace/ros2_ws/build/controller/build/lib/controller/ackermann.py -> /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller
+[3.642s] copying /home/ro01/workspace/ros2_ws/build/controller/build/lib/controller/__init__.py -> /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller
+[3.643s] copying /home/ro01/workspace/ros2_ws/build/controller/build/lib/controller/mecanum.py -> /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller
+[3.643s] copying /home/ro01/workspace/ros2_ws/build/controller/build/lib/controller/init_pose.py -> /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller
+[3.643s] copying /home/ro01/workspace/ros2_ws/build/controller/build/lib/controller/odom_publisher_node.py -> /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller
+[3.644s] byte-compiling /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller/ackermann.py to ackermann.cpython-312.pyc
+[3.645s] byte-compiling /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller/__init__.py to __init__.cpython-312.pyc
+[3.646s] byte-compiling /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller/mecanum.py to mecanum.cpython-312.pyc
+[3.647s] byte-compiling /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller/init_pose.py to init_pose.cpython-312.pyc
+[3.648s] byte-compiling /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller/odom_publisher_node.py to odom_publisher_node.cpython-312.pyc
+[3.654s] running install_data
+[3.654s] creating /home/ro01/workspace/ros2_ws/install/controller/share/ament_index
+[3.655s] creating /home/ro01/workspace/ros2_ws/install/controller/share/ament_index/resource_index
+[3.656s] creating /home/ro01/workspace/ros2_ws/install/controller/share/ament_index/resource_index/packages
+[3.656s] copying resource/controller -> /home/ro01/workspace/ros2_ws/install/controller/share/ament_index/resource_index/packages
+[3.656s] copying package.xml -> /home/ro01/workspace/ros2_ws/install/controller/share/controller
+[3.657s] creating /home/ro01/workspace/ros2_ws/install/controller/share/controller/launch
+[3.658s] copying launch/controller.launch.py -> /home/ro01/workspace/ros2_ws/install/controller/share/controller/launch
+[3.658s] copying launch/init_pose.launch.py -> /home/ro01/workspace/ros2_ws/install/controller/share/controller/launch
+[3.659s] copying launch/odom_publisher.launch.py -> /home/ro01/workspace/ros2_ws/install/controller/share/controller/launch
+[3.659s] copying launch/rf2o_laser_odometry.launch.py -> /home/ro01/workspace/ros2_ws/install/controller/share/controller/launch
+[3.660s] creating /home/ro01/workspace/ros2_ws/install/controller/share/controller/config
+[3.660s] copying config/ekf.yaml -> /home/ro01/workspace/ros2_ws/install/controller/share/controller/config
+[3.663s] copying config/init_pose.yaml -> /home/ro01/workspace/ros2_ws/install/controller/share/controller/config
+[3.664s] copying config/calibrate_params.yaml -> /home/ro01/workspace/ros2_ws/install/controller/share/controller/config
+[3.665s] running install_egg_info
+[3.698s] Copying ../../../build/controller/controller.egg-info to /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller-0.0.0-py3.12.egg-info
+[3.700s] running install_scripts
+[3.906s] Installing init_pose script to /home/ro01/workspace/ros2_ws/install/controller/lib/controller
+[3.909s] Installing odom_publisher script to /home/ro01/workspace/ros2_ws/install/controller/lib/controller
+[3.909s] writing list of installed files to '/home/ro01/workspace/ros2_ws/build/controller/install.log'
+[4.042s] Invoked command in '/home/ro01/workspace/ros2_ws/src/driver/controller' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/controller build --build-base /home/ro01/workspace/ros2_ws/build/controller/build install --record /home/ro01/workspace/ros2_ws/build/controller/install.log --single-version-externally-managed install_data

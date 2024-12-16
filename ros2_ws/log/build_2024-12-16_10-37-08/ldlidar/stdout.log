@@ -1,0 +1,21 @@
+-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (1.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ro01/workspace/ros2_ws/build/ldlidar
+-- Install configuration: ""
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ament_index/resource_index/package_run_dependencies/ldlidar
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ament_index/resource_index/parent_prefix_path/ldlidar
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/environment/ament_prefix_path.sh
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/environment/ament_prefix_path.dsv
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/environment/path.sh
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/environment/path.dsv
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/local_setup.bash
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/local_setup.sh
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/local_setup.zsh
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/local_setup.dsv
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/package.dsv
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ament_index/resource_index/packages/ldlidar
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/cmake/ldlidarConfig.cmake
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/cmake/ldlidarConfig-version.cmake
+-- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar/share/ldlidar/package.xml

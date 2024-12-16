@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Tool
+Comment=Tool Program
+Encoding=UTF-8
+Exec=zsh /home/ubuntu/software/tool/tool.sh
+Terminal=false
+MultipleArgs=false
+Type=Application
+Categories=Application;Development;
+StartupNotify=true
+Icon=/home/ubuntu/software/tool/resources/app.png
