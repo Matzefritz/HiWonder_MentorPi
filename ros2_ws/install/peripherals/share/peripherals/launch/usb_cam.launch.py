@@ -4,14 +4,14 @@ from launch_ros.actions import Node  # noqa: E402
 from launch import LaunchDescription, LaunchService  # noqa: E402
 
 def generate_launch_description():
-    compiled = os.environ['need_compile']
+    compiled = 'False' #os.environ['need_compile']
     if compiled == 'True':
         peripherals_package_path = get_package_share_directory('peripherals')
     else:
-        peripherals_package_path = '/home/ubuntu/ros2_ws/src/peripherals'
-    camera_nodes = Node(
-            package='usb_cam', 
-            executable='usb_cam_node_exe', 
+        peripherals_package_path = os.path.join(os.environ['HOME'], 'workspace/ros2_ws/src/peripherals')
+        camera_nodes = Node(
+            package='usb_cam',
+            executable='usb_cam_node_exe',
             output='screen',
             name='usb_cam',
             parameters=[os.path.join(peripherals_package_path, 'config', 'usb_cam_param.yaml')],

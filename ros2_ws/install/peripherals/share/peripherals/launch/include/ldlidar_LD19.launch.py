@@ -19,7 +19,7 @@ def generate_launch_description():
                 'topic_name': 'scan',
                 'product_name': 'LDLiDAR_LD19',
                 'port_baudrate': 230400,
-                'port_name': '/dev/ldlidar',
+                'port_name': '/dev/ttyUSB0',
                 'frame_id': lidar_frame,
                 'laser_scan_dir': True,
                 'enable_angle_crop_func': False,
@@ -43,5 +43,3 @@ if __name__ == '__main__':
     ls = LaunchService()
     ls.include_launch_description(ld)
     ls.run()
-
-

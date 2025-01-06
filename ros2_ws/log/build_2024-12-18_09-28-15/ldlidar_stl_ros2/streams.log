@@ -1,0 +1,34 @@
+[0.052s] Invoking command in '/home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ro01/workspace/ros2_ws/install/sdk:/home/ro01/workspace/ros2_ws/install/ros_robot_controller:/home/ro01/workspace/ros2_ws/install/peripherals:/home/ro01/workspace/ros2_ws/install/mentorpi_description:/home/ro01/workspace/ros2_ws/install/controller:/home/ro01/workspace/ros2_ws/install/calibration:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2 -- -j4 -l4
+[0.223s] [100%] Built target ldlidar_stl_ros2_node
+[0.470s] Invoked command in '/home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ro01/workspace/ros2_ws/install/sdk:/home/ro01/workspace/ros2_ws/install/ros_robot_controller:/home/ro01/workspace/ros2_ws/install/peripherals:/home/ro01/workspace/ros2_ws/install/mentorpi_description:/home/ro01/workspace/ros2_ws/install/controller:/home/ro01/workspace/ros2_ws/install/calibration:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2 -- -j4 -l4
+[0.470s] Invoking command in '/home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ro01/workspace/ros2_ws/install/sdk:/home/ro01/workspace/ros2_ws/install/ros_robot_controller:/home/ro01/workspace/ros2_ws/install/peripherals:/home/ro01/workspace/ros2_ws/install/mentorpi_description:/home/ro01/workspace/ros2_ws/install/controller:/home/ro01/workspace/ros2_ws/install/calibration:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2
+[0.492s] -- Install configuration: ""
+[0.493s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/lib/ldlidar_stl_ros2/ldlidar_stl_ros2_node
+[0.493s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch
+[0.494s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/stl27l.launch.py
+[0.494s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/viewer_stl27l.launch.py
+[0.494s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/__pycache__
+[0.494s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/__pycache__/ld19.launch.cpython-310.pyc
+[0.495s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/__pycache__/viewer_ld19.launch.cpython-310.pyc
+[0.496s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/viewer_ld19.launch.py
+[0.496s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/ld06.launch.py
+[0.496s] -- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/ld19.launch.py
+[0.496s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/viewer_ld06.launch.py
+[0.496s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//rviz2
+[0.496s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//rviz2/ldlidar.rviz
+[0.496s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ament_index/resource_index/package_run_dependencies/ldlidar_stl_ros2
+[0.496s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ament_index/resource_index/parent_prefix_path/ldlidar_stl_ros2
+[0.496s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/ament_prefix_path.sh
+[0.496s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/ament_prefix_path.dsv
+[0.497s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/path.sh
+[0.497s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/path.dsv
+[0.497s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.bash
+[0.497s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.sh
+[0.497s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.zsh
+[0.497s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.dsv
+[0.497s] -- Installing: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.dsv
+[0.497s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ament_index/resource_index/packages/ldlidar_stl_ros2
+[0.497s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/cmake/ldlidar_stl_ros2Config.cmake
+[0.497s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/cmake/ldlidar_stl_ros2Config-version.cmake
+[0.497s] -- Up-to-date: /home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.xml
+[0.503s] Invoked command in '/home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ro01/workspace/ros2_ws/install/sdk:/home/ro01/workspace/ros2_ws/install/ros_robot_controller:/home/ro01/workspace/ros2_ws/install/peripherals:/home/ro01/workspace/ros2_ws/install/mentorpi_description:/home/ro01/workspace/ros2_ws/install/controller:/home/ro01/workspace/ros2_ws/install/calibration:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2

@@ -1,0 +1,22 @@
+[2.204s] Invoking command in '/home/ro01/workspace/ros2_ws/src/calibration': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/calibration/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/calibration build --build-base /home/ro01/workspace/ros2_ws/build/calibration/build install --record /home/ro01/workspace/ros2_ws/build/calibration/install.log --single-version-externally-managed install_data
+[2.747s] running egg_info
+[2.780s] writing ../../build/calibration/calibration.egg-info/PKG-INFO
+[2.781s] writing dependency_links to ../../build/calibration/calibration.egg-info/dependency_links.txt
+[2.788s] writing entry points to ../../build/calibration/calibration.egg-info/entry_points.txt
+[2.788s] writing requirements to ../../build/calibration/calibration.egg-info/requires.txt
+[2.788s] writing top-level names to ../../build/calibration/calibration.egg-info/top_level.txt
+[2.867s] reading manifest file '../../build/calibration/calibration.egg-info/SOURCES.txt'
+[2.884s] writing manifest file '../../build/calibration/calibration.egg-info/SOURCES.txt'
+[2.887s] running build
+[2.888s] running build_py
+[2.888s] running install
+[2.900s] running install_lib
+[2.941s] running install_data
+[2.942s] running install_egg_info
+[2.980s] removing '/home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages/calibration-0.0.0-py3.12.egg-info' (and everything under it)
+[2.981s] Copying ../../build/calibration/calibration.egg-info to /home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages/calibration-0.0.0-py3.12.egg-info
+[2.982s] running install_scripts
+[3.263s] Installing calibrate_angular script to /home/ro01/workspace/ros2_ws/install/calibration/lib/calibration
+[3.263s] Installing calibrate_linear script to /home/ro01/workspace/ros2_ws/install/calibration/lib/calibration
+[3.271s] writing list of installed files to '/home/ro01/workspace/ros2_ws/build/calibration/install.log'
+[3.721s] Invoked command in '/home/ro01/workspace/ros2_ws/src/calibration' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/calibration/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/calibration/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/calibration build --build-base /home/ro01/workspace/ros2_ws/build/calibration/build install --record /home/ro01/workspace/ros2_ws/build/calibration/install.log --single-version-externally-managed install_data

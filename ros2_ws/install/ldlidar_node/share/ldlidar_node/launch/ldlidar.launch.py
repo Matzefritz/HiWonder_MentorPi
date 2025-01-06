@@ -23,7 +23,7 @@ from launch_ros.actions import Node, LifecycleNode
 
 
 def generate_launch_description():
-    
+
     node_name = LaunchConfiguration('node_name')
 
     # Lidar node configuration file
@@ -63,14 +63,15 @@ def generate_launch_description():
         robot_desc = infp.read()
 
     # Robot State Publisher node
-    rsp_node = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        name='ldlidar_state_publisher',
-        output='screen',
-        parameters=[{'robot_description': robot_desc}],
-        arguments=[urdf]
-    )
+    # rsp_node = Node(
+    #     package='robot_state_publisher',
+    #     executable='robot_state_publisher',
+    #     name='ldlidar_state_publisher',
+    #     output='screen',
+    #     parameters=[{'robot_description': robot_desc}],
+    #     arguments=[urdf]
+    # )
+    # ld.add_action(rsp_node)
 
     # Define LaunchDescription variable
     ld = LaunchDescription()
@@ -79,7 +80,7 @@ def generate_launch_description():
     ld.add_action(declare_node_name_cmd)
 
     # Launch Nav2 Lifecycle Manager
-    ld.add_action(rsp_node)
+    # ld.add_action(rsp_node)
 
     # LDLidar Lifecycle node
     ld.add_action(ldlidar_node)

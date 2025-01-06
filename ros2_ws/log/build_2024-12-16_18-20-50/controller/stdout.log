@@ -1,0 +1,20 @@
+running egg_info
+writing ../../../build/controller/controller.egg-info/PKG-INFO
+writing dependency_links to ../../../build/controller/controller.egg-info/dependency_links.txt
+writing entry points to ../../../build/controller/controller.egg-info/entry_points.txt
+writing requirements to ../../../build/controller/controller.egg-info/requires.txt
+writing top-level names to ../../../build/controller/controller.egg-info/top_level.txt
+reading manifest file '../../../build/controller/controller.egg-info/SOURCES.txt'
+writing manifest file '../../../build/controller/controller.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../../build/controller/controller.egg-info to /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller-0.0.0-py3.12.egg-info
+running install_scripts
+Installing init_pose script to /home/ro01/workspace/ros2_ws/install/controller/lib/controller
+Installing odom_publisher script to /home/ro01/workspace/ros2_ws/install/controller/lib/controller
+writing list of installed files to '/home/ro01/workspace/ros2_ws/build/controller/install.log'

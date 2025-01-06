@@ -1,0 +1,19 @@
+[1.676s] Invoking command in '/home/ro01/workspace/ros2_ws/src/simulations/mentorpi_description': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/mentorpi_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/mentorpi_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/mentorpi_description build --build-base /home/ro01/workspace/ros2_ws/build/mentorpi_description/build install --record /home/ro01/workspace/ros2_ws/build/mentorpi_description/install.log --single-version-externally-managed install_data
+[2.166s] running egg_info
+[2.194s] writing ../../../build/mentorpi_description/mentorpi_description.egg-info/PKG-INFO
+[2.195s] writing dependency_links to ../../../build/mentorpi_description/mentorpi_description.egg-info/dependency_links.txt
+[2.195s] writing requirements to ../../../build/mentorpi_description/mentorpi_description.egg-info/requires.txt
+[2.196s] writing top-level names to ../../../build/mentorpi_description/mentorpi_description.egg-info/top_level.txt
+[2.257s] reading manifest file '../../../build/mentorpi_description/mentorpi_description.egg-info/SOURCES.txt'
+[2.258s] writing manifest file '../../../build/mentorpi_description/mentorpi_description.egg-info/SOURCES.txt'
+[2.259s] running build
+[2.259s] running build_py
+[2.259s] running install
+[2.273s] running install_lib
+[2.300s] running install_data
+[2.300s] running install_egg_info
+[2.335s] removing '/home/ro01/workspace/ros2_ws/install/mentorpi_description/lib/python3.12/site-packages/mentorpi_description-0.0.0-py3.12.egg-info' (and everything under it)
+[2.336s] Copying ../../../build/mentorpi_description/mentorpi_description.egg-info to /home/ro01/workspace/ros2_ws/install/mentorpi_description/lib/python3.12/site-packages/mentorpi_description-0.0.0-py3.12.egg-info
+[2.336s] running install_scripts
+[2.578s] writing list of installed files to '/home/ro01/workspace/ros2_ws/build/mentorpi_description/install.log'
+[3.070s] Invoked command in '/home/ro01/workspace/ros2_ws/src/simulations/mentorpi_description' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/mentorpi_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/mentorpi_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/mentorpi_description build --build-base /home/ro01/workspace/ros2_ws/build/mentorpi_description/build install --record /home/ro01/workspace/ros2_ws/build/mentorpi_description/install.log --single-version-externally-managed install_data

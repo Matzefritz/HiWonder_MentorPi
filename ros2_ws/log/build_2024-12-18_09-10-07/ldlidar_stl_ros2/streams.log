@@ -1,0 +1,77 @@
+[0.014s] Invoking command in '/home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ro01/workspace/ros2_ws/install/sdk:/home/ro01/workspace/ros2_ws/install/ros_robot_controller:/home/ro01/workspace/ros2_ws/install/peripherals:/home/ro01/workspace/ros2_ws/install/mentorpi_description:/home/ro01/workspace/ros2_ws/install/controller:/home/ro01/workspace/ros2_ws/install/calibration:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2 -DCMAKE_INSTALL_PREFIX=/home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2
+[0.528s] -- The C compiler identification is GNU 13.3.0
+[0.942s] -- The CXX compiler identification is GNU 13.3.0
+[0.985s] -- Detecting C compiler ABI info
+[1.213s] -- Detecting C compiler ABI info - done
+[1.227s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.229s] -- Detecting C compile features
+[1.231s] -- Detecting C compile features - done
+[1.256s] -- Detecting CXX compiler ABI info
+[1.479s] -- Detecting CXX compiler ABI info - done
+[1.496s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.498s] -- Detecting CXX compile features
+[1.498s] -- Detecting CXX compile features - done
+[1.516s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.957s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.296s] -- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)
+[2.441s] -- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[2.489s] -- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[2.549s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.633s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.925s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[2.937s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[3.174s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[3.212s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[3.253s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.539s] -- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[4.027s] -- Found ament_lint_auto: 0.17.1 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[4.806s] -- Added test 'copyright' to check source files copyright and LICENSE
+[4.812s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[4.814s] -- Configured cppcheck include dirs: /home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/include;/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/core;/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/dataprocess;/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/filter;/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/logger;/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/networkcom;/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/include/serialcom
+[4.814s] -- Configured cppcheck exclude dirs and/or files: 
+[4.822s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[4.823s] -- Configured cpplint exclude dirs and/or files: 
+[4.826s] -- Added test 'flake8' to check Python code syntax and style conventions
+[4.829s] -- Configured 'flake8' exclude dirs and/or files: 
+[4.831s] -- Added test 'lint_cmake' to check CMake code style
+[4.837s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[4.845s] -- Added test 'uncrustify' to check C / C++ code style
+[4.846s] -- Configured uncrustify additional arguments: 
+[4.851s] -- Added test 'xmllint' to check XML markup files
+[4.856s] -- Configuring done (4.8s)
+[4.968s] -- Generating done (0.0s)
+[4.968s] -- Build files have been written to: /home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2
+[4.969s] Invoked command in '/home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ro01/workspace/ros2_ws/install/sdk:/home/ro01/workspace/ros2_ws/install/ros_robot_controller:/home/ro01/workspace/ros2_ws/install/peripherals:/home/ro01/workspace/ros2_ws/install/mentorpi_description:/home/ro01/workspace/ros2_ws/install/controller:/home/ro01/workspace/ros2_ws/install/calibration:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2 -DCMAKE_INSTALL_PREFIX=/home/ro01/workspace/ros2_ws/install/ldlidar_stl_ros2
+[4.969s] Invoking command in '/home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ro01/workspace/ros2_ws/install/sdk:/home/ro01/workspace/ros2_ws/install/ros_robot_controller:/home/ro01/workspace/ros2_ws/install/peripherals:/home/ro01/workspace/ros2_ws/install/mentorpi_description:/home/ro01/workspace/ros2_ws/install/controller:/home/ro01/workspace/ros2_ws/install/calibration:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2 -- -j4 -l4
+[5.104s] [ 12%] [32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/core/ldlidar_driver.cpp.o[0m
+[5.115s] [ 25%] [32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/src/demo.cpp.o[0m
+[5.126s] [ 37%] [32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/dataprocess/lipkg.cpp.o[0m
+[5.126s] [ 50%] [32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/filter/tofbf.cpp.o[0m
+[7.965s] [ 62%] [32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/networkcom/network_socket_interface_linux.cpp.o[0m
+[7.981s] [ 75%] [32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/logger/log_module.cpp.o[0m
+[8.052s] [ 87%] [32mBuilding CXX object CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/serialcom/serial_interface_linux.cpp.o[0m
+[8.598s] [01m[K/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:[m[K In member function ‘[01m[Kvoid LogModule::[01;32m[KInitLock[m[K()[m[K’:
+[8.598s] [01m[K/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:172:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kpthread_mutex_init[m[K’ was not declared in this scope; did you mean ‘[01m[Kpthread_mutex_t[m[K’?
+[8.598s]   172 |   [01;31m[Kpthread_mutex_init[m[K(&mutex_lock_,NULL);
+[8.598s]       |   [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[8.599s]       |   [32m[Kpthread_mutex_t[m[K
+[8.614s] [01m[K/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:[m[K In member function ‘[01m[Kvoid LogModule::[01;32m[KRealseLock[m[K()[m[K’:
+[8.614s] [01m[K/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:180:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpthread_mutex_unlock[m[K’ was not declared in this scope; did you mean ‘[01m[Kpthread_mutex_t[m[K’?
+[8.614s]   180 |         [01;31m[Kpthread_mutex_unlock[m[K(&mutex_lock_);
+[8.614s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[8.614s]       |         [32m[Kpthread_mutex_t[m[K
+[8.619s] [01m[K/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:[m[K In member function ‘[01m[Kvoid LogModule::[01;32m[KLock[m[K()[m[K’:
+[8.619s] [01m[K/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:188:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpthread_mutex_lock[m[K’ was not declared in this scope; did you mean ‘[01m[Kpthread_mutex_t[m[K’?
+[8.619s]   188 |         [01;31m[Kpthread_mutex_lock[m[K(&mutex_lock_);
+[8.619s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[8.619s]       |         [32m[Kpthread_mutex_t[m[K
+[8.628s] [01m[K/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:[m[K In member function ‘[01m[Kvoid LogModule::[01;32m[KUnLock[m[K()[m[K’:
+[8.628s] [01m[K/home/ro01/workspace/ros2_ws/src/ldlidar_stl_ros2/ldlidar_driver/src/logger/log_module.cpp:196:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpthread_mutex_unlock[m[K’ was not declared in this scope; did you mean ‘[01m[Kpthread_mutex_t[m[K’?
+[8.628s]   196 |         [01;31m[Kpthread_mutex_unlock[m[K(&mutex_lock_);
+[8.628s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[8.629s]       |         [32m[Kpthread_mutex_t[m[K
+[8.731s] gmake[2]: *** [CMakeFiles/ldlidar_stl_ros2_node.dir/build.make:132: CMakeFiles/ldlidar_stl_ros2_node.dir/ldlidar_driver/src/logger/log_module.cpp.o] Error 1
+[8.731s] gmake[2]: *** Waiting for unfinished jobs....
+[14.681s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/ldlidar_stl_ros2_node.dir/all] Error 2
+[14.682s] gmake: *** [Makefile:146: all] Error 2
+[14.685s] Invoked command in '/home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ro01/workspace/ros2_ws/install/sdk:/home/ro01/workspace/ros2_ws/install/ros_robot_controller:/home/ro01/workspace/ros2_ws/install/peripherals:/home/ro01/workspace/ros2_ws/install/mentorpi_description:/home/ro01/workspace/ros2_ws/install/controller:/home/ro01/workspace/ros2_ws/install/calibration:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ro01/workspace/ros2_ws/build/ldlidar_stl_ros2 -- -j4 -l4

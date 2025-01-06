@@ -24,7 +24,7 @@ from launch_ros.actions import Node, LifecycleNode
 
 
 def generate_launch_description():
-    
+
     node_name = LaunchConfiguration('node_name')
 
     # Lifecycle manager configuration file
@@ -54,7 +54,7 @@ def generate_launch_description():
     )
 
     # SLAM Toolbox node in async mode
-    slam_toolbox_node = LifecycleNode(          
+    slam_toolbox_node = LifecycleNode(
           package='slam_toolbox',
           executable='async_slam_toolbox_node',
           namespace='',
@@ -66,7 +66,7 @@ def generate_launch_description():
           ],
           remappings=[
               ('/scan', '/ldlidar_node/scan')
-          ]          
+          ]
     )
 
     # Include LDLidar launch
@@ -112,7 +112,7 @@ def generate_launch_description():
     ld.add_action(lc_mgr_node)
 
     # Launch SLAM Toolbox node
-    ld.add_action(slam_toolbox_node)    
+    ld.add_action(slam_toolbox_node)
 
     # Launch fake odom publisher node
     ld.add_action(fake_odom)

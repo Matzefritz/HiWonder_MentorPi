@@ -1,0 +1,22 @@
+[2.453s] Invoking command in '/home/ro01/workspace/ros2_ws/src/driver/controller': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/controller build --build-base /home/ro01/workspace/ros2_ws/build/controller/build install --record /home/ro01/workspace/ros2_ws/build/controller/install.log --single-version-externally-managed install_data
+[2.962s] running egg_info
+[2.990s] writing ../../../build/controller/controller.egg-info/PKG-INFO
+[3.037s] writing dependency_links to ../../../build/controller/controller.egg-info/dependency_links.txt
+[3.038s] writing entry points to ../../../build/controller/controller.egg-info/entry_points.txt
+[3.039s] writing requirements to ../../../build/controller/controller.egg-info/requires.txt
+[3.041s] writing top-level names to ../../../build/controller/controller.egg-info/top_level.txt
+[3.125s] reading manifest file '../../../build/controller/controller.egg-info/SOURCES.txt'
+[3.127s] writing manifest file '../../../build/controller/controller.egg-info/SOURCES.txt'
+[3.127s] running build
+[3.127s] running build_py
+[3.128s] running install
+[3.142s] running install_lib
+[3.183s] running install_data
+[3.184s] running install_egg_info
+[3.219s] removing '/home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller-0.0.0-py3.12.egg-info' (and everything under it)
+[3.219s] Copying ../../../build/controller/controller.egg-info to /home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages/controller-0.0.0-py3.12.egg-info
+[3.221s] running install_scripts
+[3.473s] Installing init_pose script to /home/ro01/workspace/ros2_ws/install/controller/lib/controller
+[3.473s] Installing odom_publisher script to /home/ro01/workspace/ros2_ws/install/controller/lib/controller
+[3.480s] writing list of installed files to '/home/ro01/workspace/ros2_ws/build/controller/install.log'
+[3.617s] Invoked command in '/home/ro01/workspace/ros2_ws/src/driver/controller' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/controller build --build-base /home/ro01/workspace/ros2_ws/build/controller/build install --record /home/ro01/workspace/ros2_ws/build/controller/install.log --single-version-externally-managed install_data

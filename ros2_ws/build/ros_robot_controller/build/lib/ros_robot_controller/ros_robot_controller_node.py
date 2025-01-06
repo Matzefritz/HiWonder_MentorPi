@@ -69,7 +69,7 @@ class RosRobotController(Node):
         """
         从 YAML 文件中读取舵机偏差设置。
         """
-        config_path = os.path.join(os.environ['HOME'], 'workspace2/software/Servo_upper_computer/servo_config.yaml')
+        config_path = os.path.join(os.environ['HOME'], 'workspace/software/Servo_upper_computer/servo_config.yaml')
         try:
             with open(config_path, 'r') as file:
                 config = yaml.safe_load(file)
@@ -165,6 +165,7 @@ class RosRobotController(Node):
         return [True, states]
 
     def set_bus_servo_position(self, msg):
+        self.get_logger().info("In bus servo positon callback method")
         data = []
         for i in msg.position:
             data.extend([[i.id, i.position]])

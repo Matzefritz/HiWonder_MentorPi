@@ -1,0 +1,5 @@
+  File "/home/ro01/workspace/ros2_ws/install/peripherals/lib/python3.12/site-packages/peripherals/joystick_control.py", line 217
+    def init_servo(self)
+                        ^
+SyntaxError: expected ':'
+

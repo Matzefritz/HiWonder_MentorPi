@@ -1,0 +1,4 @@
+source;share/ldlidar_stl_ros2/local_setup.bash
+source;share/ldlidar_stl_ros2/local_setup.dsv
+source;share/ldlidar_stl_ros2/local_setup.sh
+source;share/ldlidar_stl_ros2/local_setup.zsh
