@@ -34,12 +34,12 @@ source /opt/ros/jazzy/setup.bash
 ```
 to your .bashrc file in order to source the ROS2 workspace every time a terminal is started.
 
-### Install Additional Dependencies for ROS2
+### Install Additional Dependencies
 First update your package manager
 ```bash
 sudo apt update
 ```
-
+Then install the following packages:
 * **navigation2**
    - A ROS 2 package for robot navigation, enabling autonomous path planning, obstacle avoidance, and control.
    - Required for setting up navigation tasks in your robotic project.
@@ -76,6 +76,75 @@ sudo apt install python3-transforms3d
 ```bash
 sudo apt install python3-pydantic
 ```
+
+## Setup your ROS2 workspace
+In addition to the global ROS2 workspace we just installed in /opt/ros/jazzy an additional workspace in your home directory /home/user is needed.
+In general ROS2 packages installed via the package manager get installed in the global workspace, while your own projects and code are usually organized in a separate ROS2 workspace inside your home folder. We will follow this structure.
+
+* **Create the following file structure**
+```bash
+|-- workspace
+    |-- ros2_ws
+        |-- src
+```
+You can achieve this with the following command:
+```bash
+mkdir -p ~/workspace/ros2_ws/src
+```
+Now navigate inside your ros2_ws folder and initialize the new workspace with
+```bash
+colcon build
+```
+After this you can source your workspace with
+```bash
+source install/local_setup.bash
+```
+You can also add this to your .bashrc file. This way your worspace is sourced every time a new terminal is opened. Make sure to use the correct path, e.g.:
+```bash
+source /home/user/workspace/ros2_ws/install/local_setup.bash
+```
+
+* **Download the needed packages from this repository**
+    - Download all folders from the src folder and place it in your source folder
+    - Download the software folder and place it in your workspace folder
+
+* **Finished file structure**
+The finished file structure should look like the following:
+```bash
+|-- workspace
+    |-- 
+    |-- ros2_ws
+        |-- build
+        |-- install
+        |-- log
+        |-- src
+            |-- calibration
+            |-- imu_calib
+            |-- ldrobot-lidar-ros2
+            |-- peripherals
+            |-- driver
+            |-- orchestrator_launch
+            |-- simulations
+    |-- software
+        |-- Servo_upper_computer
+        |-- collect_picture
+        |-- lab_tool
+        |-- labelImg
+        |-- tool
+        |-- yolov5
+
+```
+* **Build the workspace again**
+When you are in the ros2_ws folder you can build the workspace again with
+```bash
+colcon build
+```
+Make sure the build proccess succeeds.
+
+# Testing
+If you successfully installed everything we can start testing.
+
+## Control
 
 ## SSH Setup
 For easier development connecting to the Raspberry Pi 5 vie SSH is strongly recomended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made shure you can look up the IP address from the Raspberry Pi 5 with
