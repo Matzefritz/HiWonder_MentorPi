@@ -23,4 +23,23 @@ sudo apt install rpi-imager
 In the Raspberry Pi imager tool choose "Raspberry Pi 5" under device and under Choose OS: "Other general-purpose OS" -> "Ubuntu" -> "Ubuntu Desktop 24.04.1 LTS (64-bit)"". Then choose the micro sd card (at least 64GB) you want to install the OS on and click next to continue following the instructions of the tool.
 
 2. Boot for the first time
-Put the SD card in the Raspberry Pi 5, connect mouse, keyboard and a monitor via a micro HDMI cable and boot the Raspberry Pi 5.
+* Put the SD card in the Raspberry Pi 5, connect mouse, keyboard and a monitor via a micro HDMI cable and boot the Raspberry Pi 5.
+* Follow the installer for Ubuntu
+
+## Installing ROS2
+1. Follow this guide: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html to install ROS2 Jazzy on your system. Chose the **Desktop Install**. 
+2. Add 
+```bash
+source /opt/ros/jazzy/setup.bash
+```
+to your .bashrc file in order to source the ROS2 workspace every time a terminal is started.
+
+## SSH Setup
+For easier development connecting to the Raspberry Pi 5 vie SSH is strongly recomended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made shure you can look up the IP address from the Raspberry Pi 5 with
+```bash
+hostname -I
+```
+Now you can connect to the Raspberry Pi 5 from your computer with
+```bash
+ssh user@IP-address
+```
