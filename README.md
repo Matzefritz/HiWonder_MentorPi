@@ -35,30 +35,47 @@ source /opt/ros/jazzy/setup.bash
 to your .bashrc file in order to source the ROS2 workspace every time a terminal is started.
 
 ### Install Additional Dependencies for ROS2
+First update your package manager
+```bash
+sudo apt update
+```
 
 * **navigation2**
    - A ROS 2 package for robot navigation, enabling autonomous path planning, obstacle avoidance, and control.
    - Required for setting up navigation tasks in your robotic project.
-
+```bash
+sudo apt install ros-jazzy-navigation2
+```
 * **joint-state-publisher**
    - A tool for publishing the state of all joints in a robot.
    - Essential for visualizing robot movement or simulating joint positions in RViz.
-
+```bash
+sudo apt install ros-jazzy-joint-state-publisher
+```
 * **xacro**
    - Stands for XML Macros and is used to simplify the creation of URDF files for robot models.
    - Required for generating dynamic robot description files.
-
+```bash
+sudo apt install ros-jazzy-xacro
+```
 * **ros-jazzy-imu-complementary-filter**
    - Provides a complementary filter for IMU data processing in the ROS Jazzy distribution.
    - Helps in fusing accelerometer and gyroscope data for smoother motion tracking.
-
+```bash
+sudo apt install ros-jazzy-imu-complementary-filter
+```
 * **python3-transforms3d**
    - A Python library for handling 3D transformations such as rotations and translations.
    - Used in the `JoystickControl` package for manipulating 3D poses and transformations.
-
+```bash
+sudo apt install python3-transforms3d
+```
 * **python3-pydantic**
    - A Python library for data validation and settings management.
    - Required by the `ros usb_cam` package to handle camera configurations and data structures.
+```bash
+sudo apt install python3-pydantic
+```
 
 ## SSH Setup
 For easier development connecting to the Raspberry Pi 5 vie SSH is strongly recomended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made shure you can look up the IP address from the Raspberry Pi 5 with
@@ -69,3 +86,4 @@ Now you can connect to the Raspberry Pi 5 from your computer with
 ```bash
 ssh user@IP-address
 ```
+
