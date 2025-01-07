@@ -16,4 +16,4 @@ First, Ubuntu 24.04 needs to be installed on the Raspberry Pi 5. The easiest way
 * On Ubuntu you can simply install the program via the following command:
 ```bash
 sudo apt install rpi-imager
-´´´
+```
