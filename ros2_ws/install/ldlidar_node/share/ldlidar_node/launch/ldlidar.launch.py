@@ -1,25 +1,11 @@
-# Copyright 2022 Walter Lucetti
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-###########################################################################
-
 import os
-
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, EmitEvent, LogInfo
 from launch.substitutions import LaunchConfiguration
-from launch_ros.actions import Node, LifecycleNode
+from launch_ros.actions import LifecycleNode
+from launch_ros.events.lifecycle import ChangeState
+from lifecycle_msgs.msg import Transition
 
 
 def generate_launch_description():
@@ -48,30 +34,25 @@ def generate_launch_description():
         namespace='',
         output='screen',
         parameters=[
-            # YAML files
             lidar_config_path  # Parameters
         ]
     )
 
-    # URDF path
-    urdf_file_name = 'ldlidar_descr.urdf.xml'
-    urdf = os.path.join(
-        get_package_share_directory('ldlidar_node'),
-        'urdf',
-        urdf_file_name)
-    with open(urdf, 'r') as infp:
-        robot_desc = infp.read()
+    # Event to transition the node to the 'configured' state
+    configure_event = EmitEvent(
+        event=ChangeState(
+            lifecycle_node_matcher=lambda node: 'ldlidar_node' in node.name,
+            transition_id=Transition.TRANSITION_CONFIGURE
+        )
+    )
 
-    # Robot State Publisher node
-    # rsp_node = Node(
-    #     package='robot_state_publisher',
-    #     executable='robot_state_publisher',
-    #     name='ldlidar_state_publisher',
-    #     output='screen',
-    #     parameters=[{'robot_description': robot_desc}],
-    #     arguments=[urdf]
-    # )
-    # ld.add_action(rsp_node)
+    # Event to transition the node to the 'active' state
+    activate_event = EmitEvent(
+        event=ChangeState(
+            lifecycle_node_matcher=lambda node: 'ldlidar_node' in node.name,
+            transition_id=Transition.TRANSITION_ACTIVATE
+        )
+    )
 
     # Define LaunchDescription variable
     ld = LaunchDescription()
@@ -79,10 +60,16 @@ def generate_launch_description():
     # Launch arguments
     ld.add_action(declare_node_name_cmd)
 
-    # Launch Nav2 Lifecycle Manager
-    # ld.add_action(rsp_node)
-
-    # LDLidar Lifecycle node
+    # Add LDLidar Lifecycle node
     ld.add_action(ldlidar_node)
+
+    # Automatically configure the node
+    ld.add_action(configure_event)
+
+    # Automatically activate the node
+    ld.add_action(activate_event)
+
+    # Add logging
+    ld.add_action(LogInfo(msg="Automatically configuring and activating the ldlidar_node."))
 
     return ld

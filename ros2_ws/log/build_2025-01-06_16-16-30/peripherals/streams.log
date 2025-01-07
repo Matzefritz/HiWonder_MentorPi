@@ -1,0 +1,23 @@
+[2.820s] Invoking command in '/home/ro01/workspace/ros2_ws/src/peripherals': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/peripherals/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/peripherals/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/peripherals build --build-base /home/ro01/workspace/ros2_ws/build/peripherals/build install --record /home/ro01/workspace/ros2_ws/build/peripherals/install.log --single-version-externally-managed install_data
+[3.359s] running egg_info
+[3.391s] writing ../../build/peripherals/peripherals.egg-info/PKG-INFO
+[3.393s] writing dependency_links to ../../build/peripherals/peripherals.egg-info/dependency_links.txt
+[3.398s] writing entry points to ../../build/peripherals/peripherals.egg-info/entry_points.txt
+[3.399s] writing requirements to ../../build/peripherals/peripherals.egg-info/requires.txt
+[3.400s] writing top-level names to ../../build/peripherals/peripherals.egg-info/top_level.txt
+[3.467s] reading manifest file '../../build/peripherals/peripherals.egg-info/SOURCES.txt'
+[3.470s] writing manifest file '../../build/peripherals/peripherals.egg-info/SOURCES.txt'
+[3.474s] running build
+[3.474s] running build_py
+[3.474s] running install
+[3.485s] running install_lib
+[3.523s] running install_data
+[3.525s] running install_egg_info
+[3.561s] removing '/home/ro01/workspace/ros2_ws/install/peripherals/lib/python3.12/site-packages/peripherals-0.0.0-py3.12.egg-info' (and everything under it)
+[3.562s] Copying ../../build/peripherals/peripherals.egg-info to /home/ro01/workspace/ros2_ws/install/peripherals/lib/python3.12/site-packages/peripherals-0.0.0-py3.12.egg-info
+[3.564s] running install_scripts
+[3.812s] Installing joystick_control script to /home/ro01/workspace/ros2_ws/install/peripherals/lib/peripherals
+[3.813s] Installing teleop_key_control script to /home/ro01/workspace/ros2_ws/install/peripherals/lib/peripherals
+[3.823s] Installing tf_broadcaster_imu script to /home/ro01/workspace/ros2_ws/install/peripherals/lib/peripherals
+[3.824s] writing list of installed files to '/home/ro01/workspace/ros2_ws/build/peripherals/install.log'
+[4.036s] Invoked command in '/home/ro01/workspace/ros2_ws/src/peripherals' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/peripherals/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/peripherals/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/peripherals build --build-base /home/ro01/workspace/ros2_ws/build/peripherals/build install --record /home/ro01/workspace/ros2_ws/build/peripherals/install.log --single-version-externally-managed install_data

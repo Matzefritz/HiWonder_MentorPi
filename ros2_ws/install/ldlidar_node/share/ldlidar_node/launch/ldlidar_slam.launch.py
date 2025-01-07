@@ -115,12 +115,12 @@ def generate_launch_description():
     ld.add_action(slam_toolbox_node)
 
     # Launch fake odom publisher node
-    ld.add_action(fake_odom)
+    #ld.add_action(fake_odom)
 
     # Call LDLidar launch
     ld.add_action(ldlidar_launch)
 
     # Start RVIZ2
-    ld.add_action(rviz2_node)
+    #ld.add_action(rviz2_node)
 
     return ld

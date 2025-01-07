@@ -7,6 +7,8 @@
 /home/ro01/workspace/ros2_ws/install/ldlidar_node/share/ldlidar_node/config/ldlidar.rviz
 /home/ro01/workspace/ros2_ws/install/ldlidar_node/share/ldlidar_node/urdf/ldlidar_descr.urdf.xml
 /home/ro01/workspace/ros2_ws/install/ldlidar_node/share/ldlidar_node/urdf/model/LD19.stl
+/home/ro01/workspace/ros2_ws/install/ldlidar_node/share/ldlidar_node/launch/ldlidar_slam_only.launch.py
+/home/ro01/workspace/ros2_ws/install/ldlidar_node/share/ldlidar_node/launch/__pycache__/ldlidar.launch.cpython-312.pyc
 /home/ro01/workspace/ros2_ws/install/ldlidar_node/share/ldlidar_node/launch/ldlidar_with_mgr.launch.py
 /home/ro01/workspace/ros2_ws/install/ldlidar_node/share/ldlidar_node/launch/ldlidar.launch.py
 /home/ro01/workspace/ros2_ws/install/ldlidar_node/share/ldlidar_node/launch/ldlidar_rviz2.launch.py

@@ -1,0 +1,19 @@
+[2.385s] Invoking command in '/home/ro01/workspace/ros2_ws/src/driver/sdk': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/sdk/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/sdk/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/sdk build --build-base /home/ro01/workspace/ros2_ws/build/sdk/build install --record /home/ro01/workspace/ros2_ws/build/sdk/install.log --single-version-externally-managed install_data
+[2.791s] running egg_info
+[2.819s] writing ../../../build/sdk/sdk.egg-info/PKG-INFO
+[2.819s] writing dependency_links to ../../../build/sdk/sdk.egg-info/dependency_links.txt
+[2.826s] writing requirements to ../../../build/sdk/sdk.egg-info/requires.txt
+[2.827s] writing top-level names to ../../../build/sdk/sdk.egg-info/top_level.txt
+[2.883s] reading manifest file '../../../build/sdk/sdk.egg-info/SOURCES.txt'
+[2.884s] writing manifest file '../../../build/sdk/sdk.egg-info/SOURCES.txt'
+[2.884s] running build
+[2.884s] running build_py
+[2.885s] running install
+[2.894s] running install_lib
+[2.923s] running install_data
+[2.923s] running install_egg_info
+[2.954s] removing '/home/ro01/workspace/ros2_ws/install/sdk/lib/python3.12/site-packages/sdk-0.0.0-py3.12.egg-info' (and everything under it)
+[2.954s] Copying ../../../build/sdk/sdk.egg-info to /home/ro01/workspace/ros2_ws/install/sdk/lib/python3.12/site-packages/sdk-0.0.0-py3.12.egg-info
+[2.956s] running install_scripts
+[3.158s] writing list of installed files to '/home/ro01/workspace/ros2_ws/build/sdk/install.log'
+[3.272s] Invoked command in '/home/ro01/workspace/ros2_ws/src/driver/sdk' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ro01/workspace/ros2_ws/build/sdk/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ro01/workspace/ros2_ws/install/sdk/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/sdk build --build-base /home/ro01/workspace/ros2_ws/build/sdk/build install --record /home/ro01/workspace/ros2_ws/build/sdk/install.log --single-version-externally-managed install_data

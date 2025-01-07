@@ -14,10 +14,10 @@ def generate_launch_description():
         ),
 
         LogInfo(msg=[
-            'Including launch file located at: ', os.path.join(os.environ['HOME'], 'workspace/ros2_ws/src/peripherals/launch/lidar.launch.py')
+            'Including launch file located at: ', os.path.join(os.environ['HOME'], 'workspace/ros2_ws/src/ldrobot-lidar-ros2/ldlidar_node/launch/ldlidar.launch.py')
         ]),
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(os.environ['HOME'], 'workspace/ros2_ws/src/peripherals/launch/lidar.launch.py')),
+            PythonLaunchDescriptionSource(os.path.join(os.environ['HOME'], 'workspace/ros2_ws/src/ldrobot-lidar-ros2/ldlidar_node/launch/ldlidar.launch.py')),
         ),
 
         LogInfo(msg=[
@@ -35,9 +35,9 @@ def generate_launch_description():
         ),
 
         LogInfo(msg=[
-            'Including launch file located at: ', os.path.join(get_package_share_directory('slam_toolbox'), 'launch/online_async_launch.py')
+            'Including launch file located at: ', os.path.join(os.environ['HOME'], 'workspace/ros2_ws/src/orchestrator_launch/launch/slam_toolbox.launch.py')
         ]),
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(get_package_share_directory('slam_toolbox'), 'launch/online_async_launch.py')),
+            PythonLaunchDescriptionSource(os.path.join(os.environ['HOME'], 'workspace/ros2_ws/src/orchestrator_launch/launch/slam_toolbox.launch.py')),
         ),
     ])
