@@ -11,9 +11,13 @@ In this chapter the basic setup of the robot is explained. You will install Linu
 Ubuntu 24.04 together with ROS2 Jazzy is used in this project.
 
 ## Linux Setup
-First, Ubuntu 24.04 needs to be installed on the Raspberry Pi 5. The easiest way to achieve this is via the Raspberry Pi imager.
+First, Ubuntu 24.04 needs to be installed on the Raspberry Pi 5.
+
+1. Flash Linux Image
+The easiest way to flash the linux image is via the Raspberry Pi imager.
 * For windows you can download the program here: https://www.raspberrypi.com/software/
 * On Ubuntu you can simply install the program via the following command:
 ```bash
 sudo apt install rpi-imager
 ```
+In the Raspberry Pi imager tool choose <Raspberry Pi 5> under device and under Choose OS: <Other general-purpose OS> -> <Ubuntu> -> <Ubuntu Desktop 24.04.1 LTS (64-bit)>. Then choose the micro sd card (at least 64GB) you want to install the OS on. Then click next an continue following the instructions of the tool.
