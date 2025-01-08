@@ -277,8 +277,8 @@ In `rviz2` klick on *map* next to *Fixed Frame* in the *Global Options* on the l
 ![Alt Text](images/rviz_lidar_points.png "Rviz Lidar Points")
 
 ## SLAM
-**SLAM** is short for *Simultaneous Localization and Mapping* and describes the proccess of mapping ones souroundings while localizing oneselve inside this map. It is key for autonomous navigation inside an unknown space. The ros2 package `slam_toolbox` can be used to perform this using live lidar data and a complete transformation tree descibing the position of the lidar in respect to the main Coordinate origin of the robot. This transformation tree is provided by the controller node. 
-1. Launch the controller node:
+**SLAM** is short for *Simultaneous Localization and Mapping* and describes the proccess of mapping ones souroundings while localizing oneselve inside this map. It is key for autonomous navigation in an unknown environment. The `ROS2` package `slam_toolbox` can be used to perform this using live lidar data and a complete transformation tree. This tree descibes the position of the lidar in respect to the main coordinate origin of the robot. This transformation tree is implemented in the `controller` package.
+1. Launch the `controller` node:
 ```bash
 ros2 launch controller controller.launch.py
 ```
@@ -286,7 +286,7 @@ ros2 launch controller controller.launch.py
 ```bash
 ros2 launch ldlidar_node ldlidar.launch.py
 ```
-3. Launch the slam_toolbox with a custom launch file located inside the `orchestrator launch package`:
+3. Launch the `slam_toolbox` with a custom launch file located inside the `orchestrator_launch` package:
 ```bash
 ros2 launch orchestrator_launch slam_toolbox.launch.py
 ```
