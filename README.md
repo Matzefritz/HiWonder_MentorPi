@@ -144,6 +144,61 @@ Make sure the build proccess succeeds.
 # Testing
 If you successfully installed everything we can start testing.
 
+## Test Motor Functions
+The expansion board from Hiwonder controlls all 4 wheels, the 2 pwm servos the camera is atached to and also allows for access to the IMU. 
+All this functionality is managed by the "controller" package which can be found in the "driver" folder in the src folder in your ROS2 workspace.
+With
+```bash
+ros2 launch controller controller.launch.py
+```
+you can launch this package. You can verify a succesfull launch by typing
+```bash
+ros2 topic list
+```
+in a second terminal. This will list all topics currently published or subscribed to by all running nodes. After the launch of the controller package, the list should look like the following:
+```bash
+matthias@matthiasT15:~$ ros2 topic list
+/cmd_vel
+/controller/cmd_vel
+/controller_manager/joint_states
+/diagnostics
+/imu
+/imu/rpy/filtered
+/imu/steady_state
+/imu_corrected
+/joint_states
+/odom
+/odom_raw
+/odom_rf2o
+/parameter_events
+/robot_description
+/ros_robot_controller/battery
+/ros_robot_controller/bus_servo/set_position
+/ros_robot_controller/bus_servo/set_state
+/ros_robot_controller/button
+/ros_robot_controller/enable_reception
+/ros_robot_controller/imu_raw
+/ros_robot_controller/joy
+/ros_robot_controller/pwm_servo/set_state
+/ros_robot_controller/sbus
+/ros_robot_controller/set_buzzer
+/ros_robot_controller/set_led
+/ros_robot_controller/set_motor
+/ros_robot_controller/set_oled
+/ros_robot_controller/set_rgb
+/rosout
+/set_odom
+/set_pose
+/tf
+/tf_static
+```
+Now the fun part begins. Open yet another terminal and type
+```bash
+ros2 launch peripherals joystick_control.launch.py
+```
+This launches the joystick_control node part of the peripherals package. This node handles the controller. Make sure the controller is switched on. The controller should now be connected to the USB dongle pluged in to the Raspberry Pi 5. 
+The left joystick controls the linear motion of the robot, while the right controls the rotational momentum. With the D-Pad you can additional rotate the camera around. Pressing "START" resets the camera position. 
+
 ## Control
 
 ## SSH Setup
