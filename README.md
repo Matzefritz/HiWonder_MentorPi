@@ -20,14 +20,14 @@ The easiest way to flash the linux image is via the Raspberry Pi imager.
 ```bash
 sudo apt install rpi-imager
 ```
-In the Raspberry Pi imager tool choose "Raspberry Pi 5" under device and under Choose OS: "Other general-purpose OS" -> "Ubuntu" -> "Ubuntu Desktop 24.04.1 LTS (64-bit)"". Then choose the micro sd card (at least 64GB) you want to install the OS on and click next to continue following the instructions of the tool.
+In the Raspberry Pi imager tool choose "Raspberry Pi 5" under <Device> and under <Choose OS>: "Other general-purpose OS" -> "Ubuntu" -> "Ubuntu Desktop 24.04.1 LTS (64-bit)". Then choose the micro sd card (at least 64GB) you want to install the OS on and click next to continue following the instructions of the tool.
 
 2. **Boot for the first time**
 * Put the SD card in the Raspberry Pi 5, connect mouse, keyboard and a monitor via a micro HDMI cable and boot the Raspberry Pi 5.
-* Follow the installer for Ubuntu
+* Follow the installer for Ubuntu.
 
 ## Installing ROS2
-* Follow this guide: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html to install ROS2 Jazzy on your system. Chose the **Desktop Install**. 
+* Follow this guide: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html to install ROS2 Jazzy on the Raspberry Pi 5. For development it makes a lot of sense to also have an additional computer with ROS2 installed. This makes remotely diagnosing and controlling the robot much easier. Chose the **Desktop Install** both for the robot and, if applicable, your computer. 
 * Add 
 ```bash
 source /opt/ros/jazzy/setup.bash
@@ -91,7 +91,7 @@ You can achieve this with the following command:
 ```bash
 mkdir -p ~/workspace/ros2_ws/src
 ```
-Now navigate inside your ros2_ws folder and initialize the new workspace with
+Navigate inside your ros2_ws folder and initialize the new workspace with
 ```bash
 colcon build
 ```
@@ -99,16 +99,16 @@ After this you can source your workspace with
 ```bash
 source install/local_setup.bash
 ```
-You can also add this to your .bashrc file. This way your worspace is sourced every time a new terminal is opened. Make sure to use the correct path, e.g.:
+You can also add this to your .bashrc file. This way your workspace is sourced every time a new terminal is opened. Make sure to use the correct path, e.g.:
 ```bash
 source /home/user/workspace/ros2_ws/install/local_setup.bash
 ```
 
 * **Download the needed packages from this repository**
-    - Download all folders from the src folder and place it in your source folder
-    - Download the software folder and place it in your workspace folder
+    - Download all folders from the src folder and place it in your `src` folder
+    - Download the software folder and place it in your `workspace` folder
 
-* **Finished file structure**
+* **Finished file structure**  
 The finished file structure should look like the following:
 ```bash
 |-- workspace
@@ -134,19 +134,20 @@ The finished file structure should look like the following:
         |-- yolov5
 
 ```
-* **Build the workspace again**
-When you are in the ros2_ws folder you can build the workspace again with
+* **Build the workspace again**  
+When you are in the `ros2_ws` folder you can build the workspace again with
 ```bash
 colcon build
 ```
 Make sure the build proccess succeeds.
+
 
 # Testing
 If you successfully installed everything we can start testing.
 
 ## Test Motor Functions
 The expansion board from Hiwonder controlls all 4 wheels, the 2 pwm servos the camera is atached to and also allows for access to the IMU. 
-All this functionality is managed by the "controller" package which can be found in the "driver" folder in the src folder in your ROS2 workspace.
+All this functionality is managed by the `controller` package which can be found in the `driver` folder in the src folder in your ROS2 workspace.
 With
 ```bash
 ros2 launch controller controller.launch.py
@@ -155,7 +156,7 @@ you can launch this package. You can verify a succesfull launch by typing
 ```bash
 ros2 topic list
 ```
-in a second terminal. This will list all topics currently published or subscribed to by all running nodes. After the launch of the controller package, the list should look like the following:
+in a second terminal. This will list all topics currently published or subscribed to by all running nodes. After the launch of the `controller` package, the list should look like the following:
 ```bash
 matthias@matthiasT15:~$ ros2 topic list
 /cmd_vel
@@ -196,10 +197,55 @@ Now the fun part begins. Open yet another terminal and type
 ```bash
 ros2 launch peripherals joystick_control.launch.py
 ```
-This launches the joystick_control node part of the peripherals package. This node handles the controller. Make sure the controller is switched on. The controller should now be connected to the USB dongle pluged in to the Raspberry Pi 5. 
-The left joystick controls the linear motion of the robot, while the right controls the rotational momentum. With the D-Pad you can additional rotate the camera around. Pressing "START" resets the camera position. 
+This launches the joystick_control node part of the `peripherals` package. This node handles the controller. Make sure the controller is switched on. The controller should now be connected to the USB dongle pluged in to the Raspberry Pi 5. 
+The left joystick controls the linear motion of the robot, while the right controls the rotational momentum. With the D-Pad you can additional rotate the camera around. Pressing "START" resets the camera position.
 
-## Control
+## Testing the Camera
+
+### Testing the Camera with conected Monitor
+* Run
+```bash
+ros2 launch peripherals usb_cam.launch.py
+```
+to launch the `camera` node from the `peripherals` package. Typing
+```bash
+ros2 topic list
+```
+you should see 
+```bash
+ro01@robi01:~$ ros2 topic list
+/ascamera/camera_publisher/rgb0/camera_info
+/ascamera/camera_publisher/rgb0/compressedDepth
+/ascamera/camera_publisher/rgb0/image
+/ascamera/camera_publisher/rgb0/image_compressed
+/ascamera/camera_publisher/rgb0/image_raw/theora
+/image_raw/zstd
+```
+these topics added to your list. `/ascamera/camera_publisher/rgb0/image` is the topic we care about. Run
+```bash
+ros2 run rqt_image_view rqt_image_view
+```
+A window should open. In the top left dropdown menu you can choose `/ascamera/camera_publisher/rgb0/image` as the topic you want to display. Now the live video feed from the camera should be displayed.
+
+
+### Testing the camera from a remote computer.
+* Requirements for streaming the video feed to a different computer in the same network.
+   - The receiving computer needs to run `ROS2` (preferably `ROS2 Jazzy`)
+   - A basic 'ROS2' workspace needs to be setup on the receiving computer with the `image_decompressor' package installed (The package can be downloaded from this repository)
+   - Both, the Raspberry Pi 5 and the reciving computer need to be conected to the same network (Eduroam does not work)
+* Setting up the conection. 
+   1. Launch the `camera` node on the Raspberry Pi 5:
+```bash
+ros2 launch peripherals usb_cam.launch.py
+```
+   2. Run the `decompress_image_node` from the `image_decompressor` packge on the receving computer:
+```bash
+ros2 run image_decompressor decompress_image_node
+```
+   3. Run `rqt_image_view` on the receving computer and select the `/decompressed_image` topic to display the decompressed image, the `decompress_image_node` publishes.
+```bash
+ros2 run rqt_image_view rqt_image_view
+```
 
 ## SSH Setup
 For easier development connecting to the Raspberry Pi 5 vie SSH is strongly recomended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made shure you can look up the IP address from the Raspberry Pi 5 with
