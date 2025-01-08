@@ -228,12 +228,13 @@ ros2 run rqt_image_view rqt_image_view
 A window should open. In the top left dropdown menu you can choose `/ascamera/camera_publisher/rgb0/image` as the topic you want to display. Now the live video feed from the camera should be displayed.
 
 
-### Testing the camera from a remote computer.
-Viewing the video feed from a remote computer is not as straight forward. While all `ROS2` topics published by one machine are visible by all machines running `ROS2` in the same network by default, displaying the raw video stream on a remote machine is not generally possible. Instead the `/ascamera/camera_publisher/rgb0/image_compressed` topci from the camera_node needs to be utilized. By running a decompressing node on the receving machine, we can decompress the compressed image on the receving machine and then display this decompressed image.
+### Testing the Camera from a Remote Computer (a bit more advanced)
+Viewing the video feed from a remote computer is not as straight forward. While all `ROS2` topics published by one machine are visible by all machines running `ROS2` in the same network by default, displaying the raw video stream on a remote machine is not generally possible. Instead the `/ascamera/camera_publisher/rgb0/image_compressed` topic published by the `camera_node` is utilized. By running a decompressing node on the receving machine, we can decompress the compressed image on the receving machine and then display this decompressed image.
+
 **Requirements** for streaming the video feed to a different computer in the same network:
-   - The receiving computer needs to run `ROS2` (preferably `ROS2 Jazzy`)
-   - A basic 'ROS2' workspace needs to be setup on the receiving computer with the `image_decompressor' package installed (The package can be downloaded from this repository)
-   - Both, the Raspberry Pi 5 and the reciving computer need to be conected to the same network (Eduroam does not work)
+- The receiving computer needs to run `ROS2` (preferably `ROS2 Jazzy`)
+- A basic 'ROS2' workspace needs to be setup on the receiving computer with the `image_decompressor` package installed (The package can be downloaded from this repository)
+- Both, the Raspberry Pi 5 and the reciving computer need to be conected to the same network (Eduroam does not work)
 **Setting up the Conection**
 1. Launch the `camera` node on the Raspberry Pi 5:
 ```bash
