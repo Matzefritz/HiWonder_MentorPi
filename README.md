@@ -249,7 +249,7 @@ ros2 run image_decompressor decompress_image_node
 ros2 run rqt_image_view rqt_image_view
 ```
 
-## Testing the LIDAR
+## Test the LIDAR
 To test the lidar you first need to launch the `controller` node again:
 ```bash
 ros2 launch controller controller.launch.py
@@ -276,7 +276,7 @@ rviz2
 In `rviz2` klick on *map* next to *Fixed Frame* in the *Global Options* on the left side. Select *base_footprint* from the dropdown menu. Then click on *add* in the lover left corner and then select *LaserScan* from the list. Press *OK*. *LaserScan* should now appear in the left list in red. Klick on it to open a dropdown. Klick right of *Topic* in the whitespace. An empty dropdown menu should appear. Select `/ldlidar_node/scan` from this menu. The live lidar points should now be displayed in the middle. By selecting *Points* next to the *Style* field you can make the points better visible.
 ![Alt Text](images/rviz_lidar_points.png "Rviz Lidar Points")
 
-## SLAM
+## Test SLAM
 **SLAM** is short for *Simultaneous Localization and Mapping* and describes the proccess of mapping ones souroundings while localizing oneselve inside this map. It is key for autonomous navigation in an unknown environment. The `ROS2` package `slam_toolbox` can be used to perform this using live lidar data and a complete transformation tree. This tree descibes the position of the lidar in respect to the main coordinate origin of the robot. This transformation tree is implemented in the `controller` package.
 1. Launch the `controller` node:
 ```bash
@@ -290,6 +290,14 @@ ros2 launch ldlidar_node ldlidar.launch.py
 ```bash
 ros2 launch orchestrator_launch slam_toolbox.launch.py
 ```
+4. Launch rviz2 either on the Raspberry Pi 5 or on a computer running `ROS2` inside the same network:
+```bash
+rviz2
+```
+5. Klick on *add* in the lower left corner and select *Map* from the list. Then press *OK*. Now select `/map` as the *Topic* in the dropdown Menu under the newly creaty *Map* entry in the left list.
+![Alt Text](images/rviz_slam.png "Rviz Lidar Points")
+
+
 ## SSH Setup
 For easier development connecting to the Raspberry Pi 5 via SSH is strongly recomended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made shure you can look up the IP address from the Raspberry Pi 5 with
 ```bash
