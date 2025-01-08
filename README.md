@@ -200,9 +200,9 @@ ros2 launch peripherals joystick_control.launch.py
 This launches the joystick_control node part of the `peripherals` package. This node handles the controller. Make sure the controller is switched on. The controller should now be connected to the USB dongle pluged in to the Raspberry Pi 5. 
 The left joystick controls the linear motion of the robot, while the right controls the rotational momentum. With the D-Pad you can additional rotate the camera around. Pressing "START" resets the camera position.
 
-## Testing the Camera
+## Test the Camera
 
-### Testing the Camera with conected Monitor
+### Test the Camera with a conected Monitor
 * Run
 ```bash
 ros2 launch peripherals usb_cam.launch.py
@@ -213,7 +213,7 @@ ros2 topic list
 ```
 you should see 
 ```bash
-ro01@robi01:~$ ros2 topic list
+matthias@matthiasT15:~$ ros2 topic list
 /ascamera/camera_publisher/rgb0/camera_info
 /ascamera/camera_publisher/rgb0/compressedDepth
 /ascamera/camera_publisher/rgb0/image
@@ -228,19 +228,19 @@ ros2 run rqt_image_view rqt_image_view
 A window should open. In the top left dropdown menu you can choose `/ascamera/camera_publisher/rgb0/image` as the topic you want to display. Now the live video feed from the camera should be displayed.
 
 
-### Testing the Camera from a Remote Computer (a bit more advanced)
-Viewing the video feed from a remote computer is not as straight forward. While all `ROS2` topics published by one machine are visible by all machines running `ROS2` in the same network by default, displaying the raw video stream on a remote machine is not generally possible. Instead the `/ascamera/camera_publisher/rgb0/image_compressed` topic published by the `camera_node` is utilized. By running a decompressing node on the receving machine, we can decompress the compressed image on the receving machine and then display this decompressed image.
+### Test the Camera from a Remote Computer (a bit more advanced)
+Viewing the video feed from a remote computer is not as straight forward. While all `ROS2` topics published by one machine are visible by all machines running `ROS2` in the same network by default, displaying the raw video stream on a remote machine is not generally possible (bandwith limitation). Instead the `/ascamera/camera_publisher/rgb0/image_compressed` topic published by the `camera_node` is utilized. By running a decompressing node on the receving machine, we can decompress the compressed image on the receving machine and then display this decompressed image.
 
 **Requirements** for streaming the video feed to a different computer in the same network:
 - The receiving computer needs to run `ROS2` (preferably `ROS2 Jazzy`)
-- A basic 'ROS2' workspace needs to be setup on the receiving computer with the `image_decompressor` package installed (The package can be downloaded from this repository)
-- Both, the Raspberry Pi 5 and the reciving computer need to be conected to the same network (Eduroam does not work)
-**Setting up the Conection**
+- A basic `ROS2` workspace needs to be setup on the receiving computer with the `image_decompressor` package installed (The package can be downloaded from this repository)
+- Both, the Raspberry Pi 5 and the reciving computer need to be conected to the same network (Eduroam does not work)  
+**Setting up the Conection**  
 1. Launch the `camera` node on the Raspberry Pi 5:
 ```bash
 ros2 launch peripherals usb_cam.launch.py
 ```
-2. Run the `decompress_image_node` from the `image_decompressor` packge on the receving computer:
+2. Run the `decompress_image_node` from the `image_decompressor` package on the receving computer:
 ```bash
 ros2 run image_decompressor decompress_image_node
 ```
@@ -249,8 +249,34 @@ ros2 run image_decompressor decompress_image_node
 ros2 run rqt_image_view rqt_image_view
 ```
 
+## Testing the LIDAR
+To test the lidar you first need to launch the `controller` node again:
+```bash
+ros2 launch controller controller.launch.py
+```
+After this you can launch the `ldlidar_node` present in the `ldrobot-lidar-ros2` folder:
+```bash
+ros2 launch ldlidar_node ldlidar.launch.py
+```
+You see the following topics added to your topic list:
+```bash
+matthias@matthiasT15:~$ ros2 topic list
+/bond
+/diagnostics
+/ldlidar_node/scan
+/ldlidar_node/transition_event
+/parameter_events
+/rosout
+```
+The `/ldlidar_node/scan` is the important one. 
+Open `rivz2` either on the Rasperry Pi 5 or a different computer in the same network running `ROS2` with:
+```bash
+rviz2 
+```
+In `rviz2` klick on <map> next to <Fixed Frame> in the <Global Options> on the left side. Select <base_footprint> from the dropdown menu. Then click on <add> in the lover left corner and then select <LaserScan> from the list. Press <OK>. <LaserScan> should now appear in the left list in red. Klick on it to open a dropdown. Klick right of <Topic> in the whitespace. An empty dropdown menu should appear. Select `/ldlidar_node/scan` from this menu. The live lidar points should now be displayed in the middle. By selecting <Points> next to the <Style> field you can make the points better visible.
+![Alt Text](images/rviz_lidar_points.png "Rviz Lidar Points")
 ## SSH Setup
-For easier development connecting to the Raspberry Pi 5 vie SSH is strongly recomended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made shure you can look up the IP address from the Raspberry Pi 5 with
+For easier development connecting to the Raspberry Pi 5 via SSH is strongly recomended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made shure you can look up the IP address from the Raspberry Pi 5 with
 ```bash
 hostname -I
 ```
