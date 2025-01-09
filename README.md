@@ -1,3 +1,4 @@
+![Alt Text](images/mentor_Pi.jpg "RobotPicture")
 # MentorPI mecanum-wheel development starter pack
 This repository aims to provide a reasonable starting position for ROS2 development on the Raspberry Pi 5 based MentorPi robot platform from Hiwonder. Specifically, the version equipped with the mecanum-wheel drivetrain and the gimbal monocular camera. See: https://www.hiwonder.com/collections/raspberrypi-bionic-robot/products/mentorpi-m1?variant=41285892702295
 
@@ -9,10 +10,10 @@ For more information, see the ROS2 documentation: https://docs.ros.org/en/jazzy/
 
 # Basic Setup
 In this chapter, the basic setup of the robot is explained. You will install Linux, ROS2 and all the necessary drivers for the motors, servos, camera and LIDAR.
-Ubuntu 24.04 together with ROS2 Jazzy is used in this project.
+`Ubuntu 24.04` together with `ROS2 Jazzy` is used in this project.
 
 ## Linux Setup
-First, Ubuntu 24.04 needs to be installed on the Raspberry Pi 5.
+First, `Ubuntu 24.04` needs to be installed on the Raspberry Pi 5.
 
 1. **Flash Linux Image**  
 The easiest way to flash the Linux image is via the Raspberry Pi imager.
@@ -21,10 +22,10 @@ The easiest way to flash the Linux image is via the Raspberry Pi imager.
 ```bash
 sudo apt install rpi-imager
 ```
-In the Raspberry Pi imager tool, choose "Raspberry Pi 5" under <Device> and under <Choose OS>: "Other general-purpose OS" -> "Ubuntu" -> "Ubuntu Desktop 24.04.1 LTS (64-bit)". Then choose the micro SD-card (at least 64GB) you want to install the OS on and click next to continue following the instructions of the tool.
+In the Raspberry Pi imager tool, choose `Raspberry Pi 5` under *Device* and under *Choose OS*: `Other general-purpose OS` -> `Ubuntu` -> `Ubuntu Desktop 24.04.1 LTS (64-bit)`. Then choose the micro SD-card (at least 64GB) you want to install the OS on and click next to continue following the instructions of the tool.
 
 2. **Boot for the first time**
-* Put the SD card in the Raspberry Pi 5, connect a mouse, keyboard and monitor via a micro HDMI cable and boot the Raspberry Pi 5.
+* Put the SD-card in the Raspberry Pi 5, connect a mouse, keyboard and monitor via a micro HDMI cable and boot the Raspberry Pi 5.
 * Follow the installer for Ubuntu.
 
 ## Installing ROS2
