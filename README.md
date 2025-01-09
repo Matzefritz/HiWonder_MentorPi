@@ -1,33 +1,34 @@
 # MentorPI mecanum-wheel development starter pack
-This repository aims to provide a reasonable starting position for ROS2 development on the Raspberry Pi 5 based MentorPi robot platform from Hiwonder. Specifically the version equipped with the mecanum-wheel drivetrain and the gimbal monocular camera. See: https://www.hiwonder.com/collections/raspberrypi-bionic-robot/products/mentorpi-m1?variant=41285892702295
+This repository aims to provide a reasonable starting position for ROS2 development on the Raspberry Pi 5 based MentorPi robot platform from Hiwonder. Specifically, the version equipped with the mecanum-wheel drivetrain and the gimbal monocular camera. See: https://www.hiwonder.com/collections/raspberrypi-bionic-robot/products/mentorpi-m1?variant=41285892702295
 
 # General Information
-The MentorPi plaform from Hiwonder is a Raspberry Pi 5 based robot platform. As the Raspberry Pi 5 runs normal linux in this setup, it can be thought of as a normal computer. It can therefore be used with a mouse, keyboard and a monitor as one would expect from a standard computer.
-As a development framework, ROS2 is used. ROS2 is an open-source framework for building robotic applications. It acts as the middleware between the different components of the robot and also provides tools, libraries, hardware abstraction, device drivers and more for standardised robot development.
+The MentorPi platform from Hiwonder is a Raspberry Pi 5 based robot platform. As the Raspberry Pi 5 runs normal Linux in this setup, it can be thought of as a normal computer. It can therefore be used with a mouse, keyboard and monitor as one would expect from a standard computer.
+As a development framework, ROS2 is used. ROS2 is an open-source framework for building robotic applications. It acts as the middleware between the different components of the robot and also provides tools, libraries, hardware abstraction, device drivers and more for standardized robot development.
 For more information, see the ROS2 documentation: https://docs.ros.org/en/jazzy/index.html
 
+
 # Basic Setup
-In this chapter the basic setup of the robot is explained. You will install Linux, ROS2 and all the necessary drivers for the motors, servos, camera and lidar.
+In this chapter, the basic setup of the robot is explained. You will install Linux, ROS2 and all the necessary drivers for the motors, servos, camera and LIDAR.
 Ubuntu 24.04 together with ROS2 Jazzy is used in this project.
 
 ## Linux Setup
 First, Ubuntu 24.04 needs to be installed on the Raspberry Pi 5.
 
 1. **Flash Linux Image**  
-The easiest way to flash the linux image is via the Raspberry Pi imager.
-* For windows you can download the program here: https://www.raspberrypi.com/software/
-* On Ubuntu you can simply install the program via the following command:
+The easiest way to flash the Linux image is via the Raspberry Pi imager.
+* For Windows, you can download the program here: https://www.raspberrypi.com/software/
+* On Ubuntu, you can simply install the program via the following command:
 ```bash
 sudo apt install rpi-imager
 ```
-In the Raspberry Pi imager tool choose "Raspberry Pi 5" under <Device> and under <Choose OS>: "Other general-purpose OS" -> "Ubuntu" -> "Ubuntu Desktop 24.04.1 LTS (64-bit)". Then choose the micro sd card (at least 64GB) you want to install the OS on and click next to continue following the instructions of the tool.
+In the Raspberry Pi imager tool, choose "Raspberry Pi 5" under <Device> and under <Choose OS>: "Other general-purpose OS" -> "Ubuntu" -> "Ubuntu Desktop 24.04.1 LTS (64-bit)". Then choose the micro SD-card (at least 64GB) you want to install the OS on and click next to continue following the instructions of the tool.
 
 2. **Boot for the first time**
-* Put the SD card in the Raspberry Pi 5, connect mouse, keyboard and a monitor via a micro HDMI cable and boot the Raspberry Pi 5.
+* Put the SD card in the Raspberry Pi 5, connect a mouse, keyboard and monitor via a micro HDMI cable and boot the Raspberry Pi 5.
 * Follow the installer for Ubuntu.
 
 ## Installing ROS2
-* Follow this guide: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html to install ROS2 Jazzy on the Raspberry Pi 5. For development it makes a lot of sense to also have an additional computer with ROS2 installed. This makes remotely diagnosing and controlling the robot much easier. Chose the **Desktop Install** both for the robot and, if applicable, your computer. 
+* Follow this guide: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html to install ROS2 Jazzy on the Raspberry Pi 5. For development, it makes a lot of sense to also have an additional computer with ROS2 installed. This makes remotely diagnosing and controlling the robot much easier. Chose the **Desktop Install** both for the robot and, if applicable, your computer. 
 * Add 
 ```bash
 source /opt/ros/jazzy/setup.bash
@@ -35,7 +36,7 @@ source /opt/ros/jazzy/setup.bash
 to your .bashrc file in order to source the ROS2 workspace every time a terminal is started.
 
 ### Install Additional Dependencies
-First update your package manager
+First, update your package manager:
 ```bash
 sudo apt update
 ```
@@ -79,7 +80,7 @@ sudo apt install python3-pydantic
 
 ## Setup your ROS2 workspace
 In addition to the global ROS2 workspace we just installed in /opt/ros/jazzy an additional workspace in your home directory /home/user is needed.
-In general ROS2 packages installed via the package manager get installed in the global workspace, while your own projects and code are usually organized in a separate ROS2 workspace inside your home folder. We will follow this structure.
+In general, ROS2 packages installed via the package manager get installed in the global workspace, while your own projects and code are usually organized in a separate ROS2 workspace inside your home folder. We will follow this structure.
 
 * **Create the following file structure**
 ```bash
@@ -95,11 +96,11 @@ Navigate inside your ros2_ws folder and initialize the new workspace with
 ```bash
 colcon build
 ```
-After this you can source your workspace with
+After this, you can source your workspace with
 ```bash
 source install/local_setup.bash
 ```
-You can also add this to your .bashrc file. This way your workspace is sourced every time a new terminal is opened. Make sure to use the correct path, e.g.:
+You can also add this to your .bashrc file. This way, your workspace is sourced every time a new terminal is opened. Make sure to use the correct path, e.g.:
 ```bash
 source /home/user/workspace/ros2_ws/install/local_setup.bash
 ```
@@ -135,24 +136,24 @@ The finished file structure should look like the following:
 
 ```
 * **Build the workspace again**  
-When you are in the `ros2_ws` folder you can build the workspace again with
+When you are in the `ros2_ws` folder, you can build the workspace again with
 ```bash
 colcon build
 ```
-Make sure the build proccess succeeds.
+Make sure the build process succeeds.
 
 
 # Testing
 If you successfully installed everything we can start testing.
 
 ## Test Motor Functions
-The expansion board from Hiwonder controlls all 4 wheels, the 2 pwm servos the camera is atached to and also allows for access to the IMU. 
-All this functionality is managed by the `controller` package which can be found in the `driver` folder in the src folder in your ROS2 workspace.
+The expansion board from Hiwonder controls all 4 wheels, the 2 PWM servos the camera is attached to and also allows for access to the IMU. 
+All this functionality is managed by the `controller` package, which can be found in the `driver` folder in the src folder in your ROS2 workspace.
 With
 ```bash
 ros2 launch controller controller.launch.py
 ```
-you can launch this package. You can verify a succesfull launch by typing
+you can launch this package. You can verify a successful launch by typing
 ```bash
 ros2 topic list
 ```
@@ -197,12 +198,12 @@ Now the fun part begins. Open yet another terminal and type
 ```bash
 ros2 launch peripherals joystick_control.launch.py
 ```
-This launches the joystick_control node part of the `peripherals` package. This node handles the controller. Make sure the controller is switched on. The controller should now be connected to the USB dongle pluged in to the Raspberry Pi 5. 
-The left joystick controls the linear motion of the robot, while the right controls the rotational momentum. With the D-Pad you can additional rotate the camera around. Pressing "START" resets the camera position.
+This launches the joystick_control part of the `peripherals` package. This node handles the controller. Make sure the controller is switched on. The controller should now be connected to the USB dongle plugged in to the Raspberry Pi 5. 
+The left joystick controls the linear motion of the robot, while the right controls the rotational momentum. With the D-Pad, you can additionally rotate the camera around. Pressing "START" resets the camera position.
 
 ## Test the Camera
 
-### Test the Camera with a conected Monitor
+### Test the Camera with a connected Monitor
 * Run
 ```bash
 ros2 launch peripherals usb_cam.launch.py
@@ -229,32 +230,32 @@ A window should open. In the top left dropdown menu you can choose `/ascamera/ca
 
 
 ### Test the Camera from a Remote Computer (a bit more advanced)
-Viewing the video feed from a remote computer is not as straight forward. While all `ROS2` topics published by one machine are visible by all machines running `ROS2` in the same network by default, displaying the raw video stream on a remote machine is not generally possible (bandwith limitation). Instead the `/ascamera/camera_publisher/rgb0/image_compressed` topic published by the `camera_node` is utilized. By running a decompressing node on the receving machine, we can decompress the compressed image on the receving machine and then display this decompressed image.
+Viewing the video feed from a remote computer is not as straight forward. While all `ROS2` topics published by one machine are visible by all machines running `ROS2` in the same network by default, displaying the raw video stream on a remote machine is not generally possible (bandwidth limitation). Instead, the `/ascamera/camera_publisher/rgb0/image_compressed` topic published by the `camera_node` is utilized. By running a decompressing node on the receiving machine, we can decompress the compressed image on the receiving machine and then display this decompressed image.
 
 **Requirements** for streaming the video feed to a different computer in the same network:
 - The receiving computer needs to run `ROS2` (preferably `ROS2 Jazzy`)
 - A basic `ROS2` workspace needs to be setup on the receiving computer with the `image_decompressor` package installed (The package can be downloaded from this repository)
-- Both, the Raspberry Pi 5 and the reciving computer need to be conected to the same network (Eduroam does not work)  
-**Setting up the Conection**  
+- Both, the Raspberry Pi 5 and the receiving computer need to be connected to the same network (Eduroam does not work)  
+**Setting up the Connection**  
 1. Launch the `camera` node on the Raspberry Pi 5:
 ```bash
 ros2 launch peripherals usb_cam.launch.py
 ```
-2. Run the `decompress_image_node` from the `image_decompressor` package on the receving computer:
+2. Run the `decompress_image_node` from the `image_decompressor` package on the receiving computer:
 ```bash
 ros2 run image_decompressor decompress_image_node
 ```
-3. Run `rqt_image_view` on the receving computer and select the `/decompressed_image` topic to display the decompressed image, the `decompress_image_node` publishes.
+3. Run `rqt_image_view` on the receiving computer and select the `/decompressed_image` topic to display the decompressed image, the `decompress_image_node` publishes.
 ```bash
 ros2 run rqt_image_view rqt_image_view
 ```
 
 ## Test the LIDAR
-To test the lidar you first need to launch the `controller` node again:
+To test the LIDAR, you first need to launch the `controller` node again:
 ```bash
 ros2 launch controller controller.launch.py
 ```
-After this you can launch the `ldlidar_node` present in the `ldrobot-lidar-ros2` folder:
+After this, you can launch the `ldlidar_node` present in the `ldrobot-lidar-ros2` folder:
 ```bash
 ros2 launch ldlidar_node ldlidar.launch.py
 ```
@@ -269,15 +270,15 @@ matthias@matthiasT15:~$ ros2 topic list
 /rosout
 ```
 The `/ldlidar_node/scan` is the important one. 
-Open `rivz2` either on the Rasperry Pi 5 or a different computer in the same network running `ROS2` with:
+Open `rivz2` either on the Raspberry Pi 5 or a different computer in the same network running `ROS2` with:
 ```bash
 rviz2 
 ```
-In `rviz2` klick on *map* next to *Fixed Frame* in the *Global Options* on the left side. Select *base_footprint* from the dropdown menu. Then click on *add* in the lover left corner and then select *LaserScan* from the list. Press *OK*. *LaserScan* should now appear in the left list in red. Klick on it to open a dropdown. Klick right of *Topic* in the whitespace. An empty dropdown menu should appear. Select `/ldlidar_node/scan` from this menu. The live lidar points should now be displayed in the middle. By selecting *Points* next to the *Style* field you can make the points better visible.
+In `rviz2` click on *map* next to *Fixed Frame* in the *Global Options* on the left side. Select *base_footprint* from the dropdown menu. Then click on *add* in the lover left corner and then select *LaserScan* from the list. Press *OK*. *LaserScan* should now appear in the left list in red. Click on it to open a dropdown. Click right of *Topic* in the whitespace. An empty dropdown menu should appear. Select `/ldlidar_node/scan` from this menu. The live LIDAR points should now be displayed in the middle. By selecting *Points* next to the *Style* field, you can make the points better visible.
 ![Alt Text](images/rviz_lidar_points.png "Rviz Lidar Points")
 
 ## Test SLAM
-**SLAM** is short for *Simultaneous Localization and Mapping* and describes the proccess of mapping ones souroundings while localizing oneselve inside this map. It is key for autonomous navigation in an unknown environment. The `ROS2` package `slam_toolbox` can be used to perform this using live lidar data and a complete transformation tree. This tree descibes the position of the lidar in respect to the main coordinate origin of the robot. This transformation tree is implemented in the `controller` package.
+**SLAM** is short for *Simultaneous Localization and Mapping* and describes the process of mapping one's surroundings while localizing oneself inside this map. It is key for autonomous navigation in an unknown environment. The `ROS2` package `slam_toolbox` can be used to perform this using live LIDAR data and a complete transformation tree. This tree describes the position of the LIDAR in respect to the main coordinate origin of the robot. This transformation tree is implemented in the `controller` package.
 1. Launch the `controller` node:
 ```bash
 ros2 launch controller controller.launch.py
@@ -294,12 +295,18 @@ ros2 launch orchestrator_launch slam_toolbox.launch.py
 ```bash
 rviz2
 ```
-5. Klick on *add* in the lower left corner and select *Map* from the list. Then press *OK*. Now select `/map` as the *Topic* in the dropdown Menu under the newly creaty *Map* entry in the left list.
+5. Click on *Add* in the lower left corner and select *Map* from the list. Then press *OK*. Now select `/map` as the *Topic* in the dropdown Menu under the newly created *Map* entry in the left list. The beginnings of a map should now be visible in the middle of the screen.
+6. To add the position of the robot inside the map, click *Add* again and select *TF* from the list. Then click *OK*. The position and orientation should now be displayed. Under *Frames*, you can choose which "position" you want to see. Only selecting *base_footprint* may be the most sensible. 
 ![Alt Text](images/rviz_slam.png "Rviz Lidar Points")
+7. You can now launch the joystick_control from the `peripherals` package again:
+```bash
+ros2 launch peripherals joystick_control.launch.py
+```
+Now you should be able to move around with the robot while the map is continuously updated.
 
 
 ## SSH Setup
-For easier development connecting to the Raspberry Pi 5 via SSH is strongly recomended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made shure you can look up the IP address from the Raspberry Pi 5 with
+For easier development, connecting to the Raspberry Pi 5 via SSH is strongly recommended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made sure you can look up the IP address from the Raspberry Pi 5 with
 ```bash
 hostname -I
 ```
