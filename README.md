@@ -30,11 +30,11 @@ In the Raspberry Pi imager tool, choose `Raspberry Pi 5` under *Device* and unde
 
 ## Installing ROS2
 * Follow this guide: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html to install ROS2 Jazzy on the Raspberry Pi 5. For development, it makes a lot of sense to also have an additional computer with ROS2 installed. This makes remotely diagnosing and controlling the robot much easier. Chose the **Desktop Install** both for the robot and, if applicable, your computer. 
-* Add 
+* Run 
 ```bash
 source /opt/ros/jazzy/setup.bash
 ```
-to your .bashrc file in order to source the ROS2 workspace every time a terminal is started.
+to source the `ROS2` installation. You can also add this to your .bashrc file in order to source the `ROS2` workspace every time a terminal is started. Otherwise, you need to manually enter this command every time you want to work with `ROS2` in a new terminal.
 
 ### Install Additional Dependencies
 First, update your package manager:
@@ -83,7 +83,7 @@ sudo apt install python3-pydantic
 In addition to the global ROS2 workspace we just installed in /opt/ros/jazzy an additional workspace in your home directory /home/user is needed.
 In general, ROS2 packages installed via the package manager get installed in the global workspace, while your own projects and code are usually organized in a separate ROS2 workspace inside your home folder. We will follow this structure.
 
-* **Create the following file structure**
+1. **Create the following file structure**
 ```bash
 |-- workspace
     |-- ros2_ws
@@ -93,7 +93,7 @@ You can achieve this with the following command:
 ```bash
 mkdir -p ~/workspace/ros2_ws/src
 ```
-Navigate inside your ros2_ws folder and initialize the new workspace with
+Navigate inside the `ros2_ws` folder and initialize the new workspace with
 ```bash
 colcon build
 ```
@@ -101,20 +101,20 @@ After this, you can source your workspace with
 ```bash
 source install/local_setup.bash
 ```
-You can also add this to your .bashrc file. This way, your workspace is sourced every time a new terminal is opened. Make sure to use the correct path, e.g.:
+You can also add this to your .bashrc file. This way, your workspace is sourced every time a new terminal is opened. Use the correct path, e.g.:
 ```bash
 source /home/user/workspace/ros2_ws/install/local_setup.bash
 ```
+Make sure to change `user` to the user you are using.
 
-* **Download the needed packages from this repository**
-    - Download all folders from the src folder and place it in your `src` folder
-    - Download the software folder and place it in your `workspace` folder
+2. **Download the needed Packages from this repository**
+    - Download all folders from the `src` folder and place it in **your** `src` folder
+    - Download the `software` folder and place it in **your** `workspace` folder
 
 * **Finished file structure**  
 The finished file structure should look like the following:
 ```bash
 |-- workspace
-    |-- 
     |-- ros2_ws
         |-- build
         |-- install
@@ -136,7 +136,7 @@ The finished file structure should look like the following:
         |-- yolov5
 
 ```
-* **Build the workspace again**  
+4. **Build the workspace again**  
 When you are in the `ros2_ws` folder, you can build the workspace again with
 ```bash
 colcon build
