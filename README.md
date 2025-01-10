@@ -1,8 +1,11 @@
 [**THIS REPOSITORY AND README IS A WORK IN PROGRESS**]
 
+[General Information](# General Information)
+
+
 # MentorPI mecanum-wheel development starter pack
 ![Alt Text](images/mentor_Pi.jpg "RobotPicture")
-This repository aims to provide a reasonable starting position for ROS2 development on the Raspberry Pi 5 based MentorPi robot platform from Hiwonder. Specifically, the version equipped with the mecanum-wheel drivetrain and the gimbal monocular camera. See: https://www.hiwonder.com/collections/raspberrypi-bionic-robot/products/mentorpi-m1?variant=41285892702295
+This repository aims to provide a reasonable starting position for ROS2 development on the Raspberry Pi 5 based MentorPi robot platform from Hiwonder. Specifically, the version equipped with the mecanum-wheel drivetrain and the gimbal monocular camera. (Adaptation for other specs should be fairly easy though) See: https://www.hiwonder.com/collections/raspberrypi-bionic-robot/products/mentorpi-m1?variant=41285892702295
 
 # General Information
 The MentorPi platform from Hiwonder is a Raspberry Pi 5 based robot platform. As the Raspberry Pi 5 runs normal Linux in this setup, it can be thought of as a normal computer. It can therefore be used with a mouse, keyboard and monitor as one would expect from a standard computer.
@@ -11,10 +14,10 @@ For more information, see the ROS2 documentation: https://docs.ros.org/en/jazzy/
 
 
 # Basic Setup
-* In this chapter, the basic setup of the robot is explained. You will install Linux, ROS2 and all the necessary drivers for the motors, servos, camera and LIDAR.
+* In this chapter, the basic setup of the robot is explained. You will install Linux, ROS2 and all necessary drivers for the motors, servos, camera and LIDAR.
 `Ubuntu 24.04` together with `ROS2 Jazzy` is used in this project.
 
-* This README walks you through the initial setup for your robot. How and why things work will not be explained in detail. For explanation of the project structure and information about nodes and topics see the project documentation in the `/docs` folder of this repository.
+* This README walks you through the initial setup for your robot. How and why things work may not be explained in detail. For explanation of the project structure and information about nodes and topics, see the project documentation in the `/docs` folder of this repository.
 
 * This README assumes basic knowledge about the LINUX file system and how to navigate it. For an introduction see: https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
 
@@ -97,7 +100,7 @@ sudo apt install python3-pydantic
 ```
 
 ## Setup your ROS2 workspace
-In addition to the global ROS2 workspace we just installed in `/opt/ros/jazzy` an additional workspace in your home directory `/home/user` is needed. (Substitute your home directory)
+In addition to the global ROS2 workspace we just installed in `/opt/ros/jazzy` an additional workspace in your home directory `/home/user` is needed. (Substitute your home directory).
 In general, ROS2 packages installed via the package manager get installed in the global workspace, while your own projects and code are usually organized in a separate ROS2 workspace inside your home folder. We will follow this structure.
 
 1. **Create the following file structure** inside your home directory ~
@@ -336,14 +339,39 @@ ros2 launch peripherals joystick_control.launch.py
 ```
 Now you should be able to move around with the robot while the map is continuously updated.
 
+## Quality of Life Additions
+
+### Terminator
+As you may already noticed, you often have to work with many terminals in paralel. A tiling terminal emulator can help whith this. `Terminator` is a nice choice.
+```bash
+sudo apt install terminator
+```
+With
+   - `strg`+`shift`+`e` you can split the terminal vertically.
+   - `strg`+`shift`+`o` you can split the terminal horizontally.
 
 ## SSH Setup
-For easier development, connecting to the Raspberry Pi 5 via SSH is strongly recommended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made sure you can look up the IP address from the Raspberry Pi 5 with
+* For easier development, connecting to the Raspberry Pi 5 via SSH is strongly recommended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made sure, you can look up the IP address from the Raspberry Pi 5 with
 ```bash
 hostname -I
 ```
-Now you can connect to the Raspberry Pi 5 from your computer with
+Now you can connect to the Raspberry Pi 5 from your computer with:
 ```bash
 ssh user@IP-address
 ```
+**Replace** `user` with your user and `IP-address` with the Ip-address of your Raspberry Pi 5. 
+
+* Additionally, installing `sshfs` on your machine will allow you to mount a remote file systems. This way you could for example mount the `workspace` folder of your Raspberry Pi 5 in your file system and conveniently edit files with any code editor you like on your machine.
+
+1. Install `sshfs` on your machine:
+```bash
+sudo apt install sshfs
+```
+2. Mount a remote folder:
+```bash
+sshfs user@IP-address:/remote/file/path /local/file/path
+```
+Of course **replace** `user` `IP-adress` `/remote/file/path` and `local/file/path` with your specific data. 
+   - `/remote/file/path` is the path on the remote machine you want to make accessible from your machine
+   - `local/file/path` is the file path on your local machine you want to mount the remote folder in. Creating a special folder like `~/remote_code` may be sensible.
 
