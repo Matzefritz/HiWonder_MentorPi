@@ -1,3 +1,5 @@
+[T**THIS REPOSITORY AND README IS A WORK IN PROGRESS**]
+
 # MentorPI mecanum-wheel development starter pack
 ![Alt Text](images/mentor_Pi.jpg "RobotPicture")
 This repository aims to provide a reasonable starting position for ROS2 development on the Raspberry Pi 5 based MentorPi robot platform from Hiwonder. Specifically, the version equipped with the mecanum-wheel drivetrain and the gimbal monocular camera. See: https://www.hiwonder.com/collections/raspberrypi-bionic-robot/products/mentorpi-m1?variant=41285892702295
