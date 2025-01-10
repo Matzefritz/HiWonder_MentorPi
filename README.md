@@ -1,5 +1,7 @@
 [**THIS REPOSITORY AND README IS A WORK IN PROGRESS**]
 
+# MentorPI mecanum-wheel development starter pack
+
 # Table of Contents
 - [General Information](#general-information)  
 - [Basic Setup](#basic-setup)  
@@ -19,9 +21,6 @@
    - [Terminator](#terminator)
    - [SSH Setup](#ssh-setup)
 
-
-
-# MentorPI mecanum-wheel development starter pack
 ![Alt Text](images/mentor_Pi.jpg "RobotPicture")
 This repository aims to provide a reasonable starting position for ROS2 development on the Raspberry Pi 5 based MentorPi robot platform from Hiwonder. Specifically, the version equipped with the mecanum-wheel drivetrain and the gimbal monocular camera. (Adaptation for other specs should be fairly easy though) See: https://www.hiwonder.com/collections/raspberrypi-bionic-robot/products/mentorpi-m1?variant=41285892702295
 
@@ -369,17 +368,17 @@ With
    - `strg`+`shift`+`o` you can split the terminal horizontally.
 
 ## SSH Setup
-* For easier development, connecting to the Raspberry Pi 5 via SSH is strongly recommended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made sure, you can look up the IP address from the Raspberry Pi 5 with
+* For easier development, connecting to the Raspberry Pi 5 via SSH is strongly recommended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made sure, you can look up the IP address from the Raspberry Pi 5 with:
 ```bash
 hostname -I
 ```
-Now you can connect to the Raspberry Pi 5 from your computer with:
+Now you can connect to the Raspberry Pi 5 from your computer:
 ```bash
 ssh user@IP-address
 ```
 **Replace** `user` with your user and `IP-address` with the Ip-address of your Raspberry Pi 5. 
 
-* Additionally, installing `sshfs` on your machine will allow you to mount a remote file systems. This way you could for example mount the `workspace` folder of your Raspberry Pi 5 in your file system and conveniently edit files with any code editor you like on your machine.
+* Additionally, installing `sshfs` on your machine will allow you to mount  remote file systems. This way you could for example mount the `workspace` folder of your Raspberry Pi 5 in your file system and conveniently edit files with any code editor you like on your machine.
 
 1. Install `sshfs` on your machine:
 ```bash
