@@ -1,6 +1,6 @@
 [**THIS REPOSITORY AND README IS A WORK IN PROGRESS**]
 
-[General Information](# General Information)
+[General Information](#general-information)
 
 
 # MentorPI mecanum-wheel development starter pack
