@@ -1,6 +1,24 @@
 [**THIS REPOSITORY AND README IS A WORK IN PROGRESS**]
 
+# Table of Contents
 [General Information](#general-information)
+[Basic Setup](#basic-setup)
+   - [Linux Setup](#linux-setup)
+   - [Installing ROS2](#installing-ros2)
+      - [Install Additional Dependencies](#install-additional-dependencies)
+   - [Setup your ROS2 Workspace](#setup-your-ros2-workspace)
+   - [Set Environment Variables](#set-environment-variables)
+   - [Set User Permissions](#set-user-permissions)
+[Testing](#testing)
+   - [Test the Camera](#test-the-camera)
+      - [Test the Camera with a connected Monitor](#test-the-camera-with-a-connected-monitor)
+      - [Test the Camera from a Remote Computer (a bit more advanced)](#test-the-camera-from-a-remote-computer-a-bit-more-advanced)
+   - [Test the LIDAR](#test-the-lidar)
+   - [Test SLAM](#test-slam)
+- [Quality of Life Additions](#quality-of-life-additions)
+   - [Terminator](#terminator)
+   - [SSH Setup](#ssh-setup)
+
 
 
 # MentorPI mecanum-wheel development starter pack
@@ -99,7 +117,7 @@ sudo apt install python3-transforms3d
 sudo apt install python3-pydantic
 ```
 
-## Setup your ROS2 workspace
+## Setup your ROS2 Workspace
 In addition to the global ROS2 workspace we just installed in `/opt/ros/jazzy` an additional workspace in your home directory `/home/user` is needed. (Substitute your home directory).
 In general, ROS2 packages installed via the package manager get installed in the global workspace, while your own projects and code are usually organized in a separate ROS2 workspace inside your home folder. We will follow this structure.
 
@@ -339,9 +357,9 @@ ros2 launch peripherals joystick_control.launch.py
 ```
 Now you should be able to move around with the robot while the map is continuously updated.
 
-## Quality of Life Additions
+# Quality of Life Additions
 
-### Terminator
+## Terminator
 As you may already noticed, you often have to work with many terminals in paralel. A tiling terminal emulator can help whith this. `Terminator` is a nice choice.
 ```bash
 sudo apt install terminator
