@@ -171,7 +171,6 @@ The finished file structure should look like the following:
         |-- labelImg
         |-- tool
         |-- yolov5
-
 ```
 4. **Build the workspace again**  
 When you are in the `ros2_ws` folder, you can build the workspace again with
