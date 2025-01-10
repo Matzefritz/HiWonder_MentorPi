@@ -108,8 +108,8 @@ source /home/user/workspace/ros2_ws/install/local_setup.bash
 Make sure to change `user` to the user you are using.
 
 2. **Download the needed Packages from this repository**
-    - Download all folders from the `src` folder and place it in **your** `src` folder
-    - Download the `software` folder and place it in **your** `workspace` folder
+    - Download all folders from the `src` folder and place it in **your** `src` folder.
+    - Download the `software` folder and place it in **your** `workspace` folder.
 
 * **Finished file structure**  
 The finished file structure should look like the following:
@@ -143,6 +143,12 @@ colcon build
 ```
 Make sure the build process succeeds.
 
+## Set necessary Environment Variables 
+Because the MentorPi robot comes in different versions, the used version needs to be exported as an environment variable:
+```bash
+export MACHINE_TYPE=MentorPi_Mecanum
+```
+This command should also be added to your .bashrc file to ensure the availability of the variable up on startup of a new terminal.
 
 # Testing
 If you successfully installed everything we can start testing.
