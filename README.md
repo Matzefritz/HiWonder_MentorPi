@@ -1,4 +1,4 @@
-[T**THIS REPOSITORY AND README IS A WORK IN PROGRESS**]
+[**THIS REPOSITORY AND README IS A WORK IN PROGRESS**]
 
 # MentorPI mecanum-wheel development starter pack
 ![Alt Text](images/mentor_Pi.jpg "RobotPicture")
@@ -44,6 +44,11 @@ First, update your package manager:
 sudo apt update
 ```
 Then install the following packages:
+* **usb_cam**
+   - A ROS 2 package for interfacing with USB cameras, enabling video capture and streaming in robotic applications.
+```bash
+sudo apt install ros-jazzy-usb-cam
+```
 * **navigation2**
    - A ROS 2 package for robot navigation, enabling autonomous path planning, obstacle avoidance, and control.
    - Required for setting up navigation tasks in your robotic project.
@@ -145,12 +150,19 @@ colcon build
 ```
 Make sure the build process succeeds.
 
-## Set necessary Environment Variables 
+## Set Environment Variables
 Because the MentorPi robot comes in different versions, the used version needs to be exported as an environment variable:
 ```bash
 export MACHINE_TYPE=MentorPi_Mecanum
 ```
 This command should also be added to your .bashrc file to ensure the availability of the variable up on startup of a new terminal.
+
+## Set User Permissions
+Communication with the expansion board occurs via a serial connection. To enable access, you must ensure your user belongs to the appropriate group with permissions to access serial devices. This is achieved with:
+```bash
+sudo usermod -a -G dialout $USER
+```
+You ned to restart your Raspberry Pi 5 for this rule to take effect. 
 
 # Testing
 If you successfully installed everything we can start testing.
@@ -213,7 +225,7 @@ The left joystick controls the linear motion of the robot, while the right contr
 ## Test the Camera
 
 ### Test the Camera with a connected Monitor
-* Run
+Run
 ```bash
 ros2 launch peripherals usb_cam.launch.py
 ```
@@ -239,12 +251,13 @@ A window should open. In the top left dropdown menu you can choose `/ascamera/ca
 
 
 ### Test the Camera from a Remote Computer (a bit more advanced)
-Viewing the video feed from a remote computer is not as straight forward. While all `ROS2` topics published by one machine are visible by all machines running `ROS2` in the same network by default, displaying the raw video stream on a remote machine is not generally possible (bandwidth limitation). Instead, the `/ascamera/camera_publisher/rgb0/image_compressed` topic published by the `camera_node` is utilized. By running a decompressing node on the receiving machine, we can decompress the compressed image on the receiving machine and then display this decompressed image.
+Viewing the video feed from a remote computer is not as straight forward. While all `ROS2` topics published by one machine are visible by all machines running `ROS2` in the same network by default, displaying the raw video stream on a remote machine is not generally possible (bandwidth limitation). Instead, the `/ascamera/camera_publisher/rgb0/image_compressed` topic published by the `camera_node` is utilized. By running a decompresser node on the receiving machine, we can decompress the compressed image on the receiving machine and then display this decompressed image.
 
 **Requirements** for streaming the video feed to a different computer in the same network:
 - The receiving computer needs to run `ROS2` (preferably `ROS2 Jazzy`)
-- A basic `ROS2` workspace needs to be setup on the receiving computer with the `image_decompressor` package installed (The package can be downloaded from this repository)
-- Both, the Raspberry Pi 5 and the receiving computer need to be connected to the same network (Eduroam does not work)  
+- A basic `ROS2` workspace needs to be setup on the receiving computer with the `image_decompressor` package installed (The package can be downloaded from this repository).
+- Both, the Raspberry Pi 5 and the receiving computer need to be connected to the same network (Eduroam does not work).  
+
 **Setting up the Connection**  
 1. Launch the `camera` node on the Raspberry Pi 5:
 ```bash

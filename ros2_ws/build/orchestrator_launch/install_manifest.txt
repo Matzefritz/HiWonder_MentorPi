@@ -1,4 +1,5 @@
 /home/ro01/workspace/ros2_ws/install/orchestrator_launch/share/orchestrator_launch/launch/launch_full_slam_stack.launch.py
+/home/ro01/workspace/ros2_ws/install/orchestrator_launch/share/orchestrator_launch/launch/__pycache__/slam_toolbox.launch.cpython-312.pyc
 /home/ro01/workspace/ros2_ws/install/orchestrator_launch/share/orchestrator_launch/launch/slam_toolbox.launch.py
 /home/ro01/workspace/ros2_ws/install/orchestrator_launch/share/ament_index/resource_index/package_run_dependencies/orchestrator_launch
 /home/ro01/workspace/ros2_ws/install/orchestrator_launch/share/ament_index/resource_index/parent_prefix_path/orchestrator_launch
