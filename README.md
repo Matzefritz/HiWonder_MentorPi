@@ -11,8 +11,12 @@ For more information, see the ROS2 documentation: https://docs.ros.org/en/jazzy/
 
 
 # Basic Setup
-In this chapter, the basic setup of the robot is explained. You will install Linux, ROS2 and all the necessary drivers for the motors, servos, camera and LIDAR.
+* In this chapter, the basic setup of the robot is explained. You will install Linux, ROS2 and all the necessary drivers for the motors, servos, camera and LIDAR.
 `Ubuntu 24.04` together with `ROS2 Jazzy` is used in this project.
+
+* This README walks you through the initial setup for your robot. How and why things work will not be explained in detail. For explanation of the project structure and information about nodes and topics see the project documentation in the `/docs` folder of this repository.
+
+* This README assumes basic knowledge about the LINUX file system and how to navigate it. For an introduction see: https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
 
 ## Linux Setup
 First, `Ubuntu 24.04` needs to be installed on the Raspberry Pi 5.
