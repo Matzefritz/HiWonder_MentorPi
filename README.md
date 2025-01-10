@@ -1,6 +1,7 @@
 [**THIS REPOSITORY AND README IS A WORK IN PROGRESS**]
 
 # MentorPI mecanum-wheel development starter pack
+This repository aims to provide a reasonable starting position for ROS2 development on the Raspberry Pi 5 based MentorPi robot platform from Hiwonder. Specifically, the version equipped with the mecanum-wheel drivetrain and the gimbal monocular camera. (Adaptation for other specs should be fairly easy though) See: https://www.hiwonder.com/collections/raspberrypi-bionic-robot/products/mentorpi-m1?variant=41285892702295
 
 # Table of Contents
 - [General Information](#general-information)  
@@ -22,7 +23,6 @@
    - [SSH Setup](#ssh-setup)
 
 ![Alt Text](images/mentor_Pi.jpg "RobotPicture")
-This repository aims to provide a reasonable starting position for ROS2 development on the Raspberry Pi 5 based MentorPi robot platform from Hiwonder. Specifically, the version equipped with the mecanum-wheel drivetrain and the gimbal monocular camera. (Adaptation for other specs should be fairly easy though) See: https://www.hiwonder.com/collections/raspberrypi-bionic-robot/products/mentorpi-m1?variant=41285892702295
 
 # General Information
 The MentorPi platform from Hiwonder is a Raspberry Pi 5 based robot platform. As the Raspberry Pi 5 runs normal Linux in this setup, it can be thought of as a normal computer. It can therefore be used with a mouse, keyboard and monitor as one would expect from a standard computer.
