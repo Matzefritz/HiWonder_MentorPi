@@ -1,15 +1,15 @@
 [**THIS REPOSITORY AND README IS A WORK IN PROGRESS**]
 
 # Table of Contents
-[General Information](#general-information)
-[Basic Setup](#basic-setup)
+- [General Information](#general-information)  
+- [Basic Setup](#basic-setup)  
    - [Linux Setup](#linux-setup)
    - [Installing ROS2](#installing-ros2)
       - [Install Additional Dependencies](#install-additional-dependencies)
    - [Setup your ROS2 Workspace](#setup-your-ros2-workspace)
    - [Set Environment Variables](#set-environment-variables)
    - [Set User Permissions](#set-user-permissions)
-[Testing](#testing)
+- [Testing](#testing)  
    - [Test the Camera](#test-the-camera)
       - [Test the Camera with a connected Monitor](#test-the-camera-with-a-connected-monitor)
       - [Test the Camera from a Remote Computer (a bit more advanced)](#test-the-camera-from-a-remote-computer-a-bit-more-advanced)
