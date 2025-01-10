@@ -49,6 +49,12 @@ Then install the following packages:
 ```bash
 sudo apt install ros-jazzy-usb-cam
 ```
+* **slam_toolbox**  
+   - A ROS 2 package for Simultaneous Localization and Mapping (SLAM), providing tools for 2D SLAM, map merging, and long-term mapping.  
+   - Essential for robots that require real-time environment mapping and localization in unknown areas.  
+```bash
+sudo apt install ros-jazzy-slam-toolbox
+```
 * **navigation2**
    - A ROS 2 package for robot navigation, enabling autonomous path planning, obstacle avoidance, and control.
    - Required for setting up navigation tasks in your robotic project.
@@ -87,10 +93,10 @@ sudo apt install python3-pydantic
 ```
 
 ## Setup your ROS2 workspace
-In addition to the global ROS2 workspace we just installed in /opt/ros/jazzy an additional workspace in your home directory /home/user is needed.
+In addition to the global ROS2 workspace we just installed in `/opt/ros/jazzy` an additional workspace in your home directory `/home/user` is needed. (Substitute your home directory)
 In general, ROS2 packages installed via the package manager get installed in the global workspace, while your own projects and code are usually organized in a separate ROS2 workspace inside your home folder. We will follow this structure.
 
-1. **Create the following file structure**
+1. **Create the following file structure** inside your home directory ~
 ```bash
 |-- workspace
     |-- ros2_ws
@@ -112,7 +118,7 @@ You can also add this to your .bashrc file. This way, your workspace is sourced 
 ```bash
 source /home/user/workspace/ros2_ws/install/local_setup.bash
 ```
-Make sure to change `user` to the user you are using.
+**Make sure** to change `user` to your user.
 
 2. **Download the needed Packages from this repository**
     - Download all folders from the `src` folder and place it in **your** `src` folder.
@@ -162,14 +168,14 @@ Communication with the expansion board occurs via a serial connection. To enable
 ```bash
 sudo usermod -a -G dialout $USER
 ```
-You ned to restart your Raspberry Pi 5 for this rule to take effect. 
+You need to restart your Raspberry Pi 5 for this rule to take effect. 
 
 # Testing
 If you successfully installed everything we can start testing.
 
 ## Test Motor Functions
 The expansion board from Hiwonder controls all 4 wheels, the 2 PWM servos the camera is attached to and also allows for access to the IMU. 
-All this functionality is managed by the `controller` package, which can be found in the `driver` folder in the src folder in your ROS2 workspace.
+All this functionality is managed by the `controller` package, which can be found in `~/workspace/ros2_ws/src/driver`.
 With
 ```bash
 ros2 launch controller controller.launch.py
@@ -273,11 +279,11 @@ ros2 run rqt_image_view rqt_image_view
 ```
 
 ## Test the LIDAR
-To test the LIDAR, you first need to launch the `controller` node again:
+To test the LIDAR, you need the `controller` node again:
 ```bash
 ros2 launch controller controller.launch.py
 ```
-After this, you can launch the `ldlidar_node` present in the `ldrobot-lidar-ros2` folder:
+Now you can launch the `ldlidar_node` present in the `ldrobot-lidar-ros2` folder:
 ```bash
 ros2 launch ldlidar_node ldlidar.launch.py
 ```
@@ -296,16 +302,16 @@ Open `rivz2` either on the Raspberry Pi 5 or a different computer in the same ne
 ```bash
 rviz2 
 ```
-In `rviz2` click on *map* next to *Fixed Frame* in the *Global Options* on the left side. Select *base_footprint* from the dropdown menu. Then click on *add* in the lover left corner and then select *LaserScan* from the list. Press *OK*. *LaserScan* should now appear in the left list in red. Click on it to open a dropdown. Click right of *Topic* in the whitespace. An empty dropdown menu should appear. Select `/ldlidar_node/scan` from this menu. The live LIDAR points should now be displayed in the middle. By selecting *Points* next to the *Style* field, you can make the points better visible.
+In `rviz2` click on *map* next to *Fixed Frame* in the *Global Options* on the left side. Select *base_footprint* from the dropdown menu. Then click on *add* in the lover left corner and select *LaserScan* from the list. Press *OK*. *LaserScan* should now appear in the left list in red. Click on it to open a dropdown. Click right of *Topic* in the whitespace. An empty dropdown menu should appear. Select `/ldlidar_node/scan` from this menu. The live LIDAR points should now be displayed in the middle. By selecting *Points* next to the *Style* field, you can make the points better visible.
 ![Alt Text](images/rviz_lidar_points.png "Rviz Lidar Points")
 
 ## Test SLAM
 **SLAM** is short for *Simultaneous Localization and Mapping* and describes the process of mapping one's surroundings while localizing oneself inside this map. It is key for autonomous navigation in an unknown environment. The `ROS2` package `slam_toolbox` can be used to perform this using live LIDAR data and a complete transformation tree. This tree describes the position of the LIDAR in respect to the main coordinate origin of the robot. This transformation tree is implemented in the `controller` package.
-1. Launch the `controller` node:
+1. Launch the `controller` node: (if not already running)
 ```bash
 ros2 launch controller controller.launch.py
 ```
-2. Launch the ldlidar_node:
+2. Launch the ldlidar_node: (if not already running)
 ```bash
 ros2 launch ldlidar_node ldlidar.launch.py
 ```
