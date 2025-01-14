@@ -16,11 +16,39 @@ After the initial setup your `~/workspace` directory should look like this:
             |-- simulations
     |-- software
         |-- Servo_upper_computer
-        |-- collect_picture
-        |-- lab_tool
-        |-- labelImg
-        |-- tool
-        |-- yolov5
 ```
 This chapter provides an overwiew over the different folders and what they implement respectively.
 
+## Software 
+### Servo_upper_computer
+This folder contains the source files for the gui based trimming tool for the servos, the camera is attached to. 
+
+## ros2_ws
+This folder contains the ROS2 workspace. It follows the standard structure for a ROS2 workspace. For more information about the creation, structure and guidelines of a ROS2 workspace, see: https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html .
+
+### build
+The `build` folder ist created during the build process. It contains intermediate files and metadata required for compiling and linking the packages in your workspace.
+You may want to remove this folder for a clean subsequent build. 
+
+### install
+The `install` folder is created during the build process. It ontains all the files necessary to run the compiled ROS 2 packages, including executables, shared libraries, configuration files, and resources.
+
+This folder also contains your source script, e.g. `local_setup.bash`. This needs to be sourced in order for ROS2 to set up up the environment variables required for ROS2 to recognize the packages and their dependencies in your workspace.  
+You may choose to source this file every time a terminal is started by adding the source command to your .bashrc file.  
+Additionally you may also want to source the file again after you added or removed packages to or from your workspace.
+
+### log
+The `log` folder contains all logging information from the build process, runtime, and launch events.
+
+### src
+The `src` folder contains all the source code from your workspace. It is usually organized into different packages that implement different functionality.
+
+#### calibration
+#### imu_calib
+#### ldrobot-lidar-ros2
+This package handles the communication with the LIDAR 
+
+#### peripherals
+#### driver
+#### orchestrator_launch
+#### simulations
