@@ -21,7 +21,7 @@ This chapter provides an overwiew over the different folders and what they imple
 
 ## Software 
 ### Servo_upper_computer
-This folder contains the source files for the gui based trimming tool for the servos, the camera is attached to. 
+This folder contains the source files for the gui based trimming tool for the servos the camera is attached to. 
 
 ## ros2_ws
 This folder contains the ROS2 workspace. It follows the standard structure for a ROS2 workspace. For more information about the creation, structure and guidelines of a ROS2 workspace, see: https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html .
@@ -43,12 +43,15 @@ The `log` folder contains all logging information from the build process, runtim
 ### src
 The `src` folder contains all the source code from your workspace. It is usually organized into different packages that implement different functionality.
 
-#### calibration
-#### imu_calib
-#### ldrobot-lidar-ros2
+
+# Preinstalled ROS2 Packages
+
+## calibration
+## imu_calib
+## ldrobot-lidar-ros2
 This package handles the communication with the LIDAR 
 
-#### peripherals
-#### driver
-#### orchestrator_launch
-#### simulations
+## peripherals
+## driver
+## orchestrator_launch
+## simulations
