@@ -45,11 +45,17 @@ The `src` folder contains all the source code from your workspace. It is usually
 
 
 # Preinstalled ROS2 Packages
+After completion of this repositorys README, the following packages are already installed. In this chapter, the functionality of each package is explained.
 
 ## calibration
 ## imu_calib
-## ldrobot-lidar-ros2
-This package handles the communication with the LIDAR 
+## ldrobot-lidar-ros2 -> ldlidar_node
+This package handles the communication with the LIDAR. It is based on this repository:
+https://github.com/Myzhar/ldrobot-lidar-ros2  
+The actual ROS2 package lies in the `ldlidar_node` folder.  
+The `ldlidar.yaml` in `ldlidar_node/params` defines important hardware dependent variables, such as the used serial port and the exact model of the LIDAR.
+The `ldlidar_node` (the node, not the package. For this package the node name and the package name are identical) can be launched with a launch file provided in the `launch` folder of the package. Multiple launch files are provided, altough only `ldlidar.launch.py` has been tested.
+ 
 
 ## peripherals
 ## driver
