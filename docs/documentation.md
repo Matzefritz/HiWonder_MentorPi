@@ -53,7 +53,7 @@ After completion of this repositorys README, the following packages are already 
 This package handles the communication with the LIDAR. It is based on this repository:
 https://github.com/Myzhar/ldrobot-lidar-ros2  
 The actual ROS2 package lies in the `ldlidar_node` folder.  
-The `ldlidar.yaml` in `ldlidar_node/params` defines important hardware dependent variables, such as the used serial port and the exact model of the LIDAR.
+The `ldlidar.yaml` in `ldlidar_node/params` folder defines important hardware dependent variables, such as the used serial port and the exact model of the LIDAR.
 The `ldlidar_node` (the node, not the package. For this package the node name and the package name are identical) can be launched with a launch file provided in the `launch` folder of the package. Multiple launch files are provided, altough only `ldlidar.launch.py` has been tested.
  
 
