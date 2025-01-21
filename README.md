@@ -1,7 +1,7 @@
 [**THIS REPOSITORY AND README IS A WORK IN PROGRESS**]
 
 # MentorPI mecanum-wheel development starter pack
-This repository aims to provide a reasonable starting position for ROS2 development on the Raspberry Pi 5 based MentorPi robot platform from Hiwonder. Specifically, the version equipped with the mecanum-wheel drivetrain and the gimbal monocular camera. (Adaptation for other specs should be fairly easy though) See: https://www.hiwonder.com/collections/raspberrypi-bionic-robot/products/mentorpi-m1?variant=41285892702295
+This repository aims to provide a reasonable starting position for ROS2 development on the Raspberry Pi 5 based MentorPi robot platform from Hiwonder. Specifically, the version equipped with the mecanum-wheel drivetrain and the gimbal monocular camera. See: https://www.hiwonder.com/collections/raspberrypi-bionic-robot/products/mentorpi-m1?variant=41285892702295
 
 ![Alt Text](images/mentor_Pi.jpg "RobotPicture")
 
@@ -25,13 +25,13 @@ This repository aims to provide a reasonable starting position for ROS2 developm
    - [SSH Setup](#ssh-setup)
 
 # General Information
-The MentorPi platform from Hiwonder is a Raspberry Pi 5 based robot platform. As the Raspberry Pi 5 runs normal Linux in this setup, it can be thought of as a normal computer. It can therefore be used with a mouse, keyboard and monitor as one would expect from a standard computer.
-As a development framework, ROS2 is used. ROS2 is an open-source framework for building robotic applications. It acts as the middleware between the different components of the robot and also provides tools, libraries, hardware abstraction, device drivers and more for standardized robot development.
+The MentorPi platform from Hiwonder is a Raspberry Pi 5 based robot platform. The operating system we will be installing on the Raspberry Pi 5 is Ubuntu 24.04, which is a version of Linux. Therefore the robot can be thought of as a normal computer, that can be used with a mouse, keyboard and monitor.
+As a development framework, the Robot Operating System (ROS2) is used. The version used is ROS2 Jazzy. ROS2 is an open-source framework for building robotic applications. It acts as the middleware between the different components of the robot and also provides tools, libraries, hardware abstraction, device drivers and more for standardized robot development.
 For more information, see the ROS2 documentation: https://docs.ros.org/en/jazzy/index.html
 
 
 # Basic Setup
-* In this chapter, the basic setup of the robot is explained. You will install Linux, ROS2 and all necessary drivers for the motors, servos, camera and LIDAR.
+* In this chapter, the basic setup of the robot is explained. You will install Linux, ROS2 and all necessary drivers for the motors, servos, camera and LIDAR on the Raspberry Pi 5 of the robot.
 `Ubuntu 24.04` together with `ROS2 Jazzy` is used in this project.
 
 * This README walks you through the initial setup for your robot. How and why things work may not be explained in detail. For explanation of the project structure and information about nodes and topics, see the project documentation in the `/docs` folder of this repository.
@@ -39,7 +39,11 @@ For more information, see the ROS2 documentation: https://docs.ros.org/en/jazzy/
 * This README assumes basic knowledge about the LINUX file system and how to navigate it. For an introduction see: https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
 
 ## Linux Setup
-First, `Ubuntu 24.04` needs to be installed on the Raspberry Pi 5.
+First, `Ubuntu 24.04` needs to be installed on the SD card of the Raspberry Pi 5. The SD card is located under the Raspberry PI 5 as shown below:
+
+<p align="center">
+  <img src="images/sd_card_location.png" alt="SD card location">
+</p>
 
 1. **Flash Linux Image**  
 The easiest way to flash the Linux image is via the Raspberry Pi imager.
@@ -48,11 +52,11 @@ The easiest way to flash the Linux image is via the Raspberry Pi imager.
 ```bash
 sudo apt install rpi-imager
 ```
-In the Raspberry Pi imager tool, choose `Raspberry Pi 5` under *Device* and under *Choose OS*: `Other general-purpose OS` -> `Ubuntu` -> `Ubuntu Desktop 24.04.1 LTS (64-bit)`. Then choose the micro SD-card (at least 64GB) you want to install the OS on and click next to continue following the instructions of the tool.
+Open the Raspberry PI Imager Tool, choose `Raspberry Pi 5` under *Device* and under *Choose OS*: `Other general-purpose OS` -> `Ubuntu` -> `Ubuntu Desktop 24.04.1 LTS (64-bit)`. Then choose the micro SD-card (at least 64GB) you want to install the OS on and click next to continue following the instructions of the tool.
 
 2. **Boot for the first time**
 * Put the SD-card in the Raspberry Pi 5, connect a mouse, keyboard and monitor via a micro HDMI cable and boot the Raspberry Pi 5.
-* Follow the installer for Ubuntu.
+* Follow the installer for Ubuntu. You can choose your own username and password.
 
 ## Installing ROS2
 * Follow this guide: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html to install ROS2 Jazzy on the Raspberry Pi 5. For development, it makes a lot of sense to also have an additional computer with ROS2 installed. This makes remotely diagnosing and controlling the robot much easier. Chose the **Desktop Install** both for the robot and, if applicable, your computer. 
@@ -60,7 +64,24 @@ In the Raspberry Pi imager tool, choose `Raspberry Pi 5` under *Device* and unde
 ```bash
 source /opt/ros/jazzy/setup.bash
 ```
-to source the `ROS2` installation. You can also add this to your .bashrc file in order to source the `ROS2` workspace every time a terminal is started. Otherwise, you need to manually enter this command every time you want to work with `ROS2` in a new terminal.
+to source the `ROS2` installation. This command needs to be entered manually every time you want to work with `ROS2` in a new terminal.
+In order to avoid this, you can add it to your .bashrc file.
+
+The .bashrc file is a script in your home directory that initializes settings, environment variables, and commands for new terminal sessions. It is executed everytime a new shell is started.
+
+To add the command, open the file with a text editor, for example using:
+```bash
+nano ~/.bashrc
+```
+and add the new command, in this case:
+```bash
+source /opt/ros/jazzy/setup.bash
+```
+to the end of the file. Save the file and reload by either entering
+```bash
+source ~/.bashrc
+```
+or by closing the terminal and opening a new one (doing this runs the .bashrc file).
 
 ### Install Additional Dependencies
 First, update your package manager:
@@ -134,15 +155,20 @@ Navigate inside the `ros2_ws` folder and initialize the new workspace with
 ```bash
 colcon build
 ```
+You may need to install colcon at this point. It can be installed with: 
+```bash
+sudo apt install colcon
+```
 After this, you can source your workspace with
 ```bash
 source install/local_setup.bash
 ```
-You can also add this to your .bashrc file. This way, your workspace is sourced every time a new terminal is opened. Use the correct path, e.g.:
+
+This command can also be added to your .bashrc file. This way, your workspace is sourced every time a new terminal is opened. Use the correct path, e.g.:
 ```bash
 source /home/user/workspace/ros2_ws/install/local_setup.bash
 ```
-**Make sure** to change `user` to your user.
+**Make sure** to change `user` to the username you chose for the robot.
 
 2. **Download the needed Packages from this repository**
     - Download all folders from the `src` folder and place it in **your** `src` folder.
@@ -184,7 +210,7 @@ Because the MentorPi robot comes in different versions, the used version needs t
 ```bash
 export MACHINE_TYPE=MentorPi_Mecanum
 ```
-This command should also be added to your .bashrc file to ensure the availability of the variable up on startup of a new terminal.
+This command should also be added to your .bashrc file to ensure the availability of the variable upon startup of a new terminal.
 
 ## Set User Permissions
 Communication with the expansion board occurs via a serial connection. To enable access, you must ensure your user belongs to the appropriate group with permissions to access serial devices. This is achieved with:
@@ -358,7 +384,7 @@ Now you should be able to move around with the robot while the map is continuous
 # Quality of Life Additions
 
 ## Terminator
-As you may already noticed, you often have to work with many terminals in paralel. A tiling terminal emulator can help whith this. `Terminator` is a nice choice.
+As you may already noticed, you often have to work with many terminals in paralel. A tiling terminal emulator can help with this. `Terminator` is a nice choice.
 ```bash
 sudo apt install terminator
 ```
