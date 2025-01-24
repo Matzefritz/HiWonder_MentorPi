@@ -23,6 +23,8 @@ This repository aims to provide a reasonable starting position for ROS2 developm
 - [Quality of Life Additions](#quality-of-life-additions)
    - [Terminator](#terminator)
    - [SSH Setup](#ssh-setup)
+   - [rviz2](#rviz2)
+   - [Nav2](#nav2)
 
 # General Information
 The MentorPi platform from Hiwonder is a Raspberry Pi 5 based robot platform. The operating system we will be installing on the Raspberry Pi 5 is Ubuntu 24.04, which is a version of Linux. Therefore the robot can be thought of as a normal computer, that can be used with a mouse, keyboard and monitor. The robot uses mecanum wheels, and features a monocular camera, which can be moved around, a LIDAR scanner, an inertial measurement unit (IMU), and wheel encoders.
@@ -437,3 +439,22 @@ Of course **replace** `user` `IP-adress` `/remote/file/path` and `local/file/pat
    - `/remote/file/path` is the path on the remote machine you want to make accessible from your machine
    - `local/file/path` is the file path on your local machine you want to mount the remote folder in. Creating a special folder like `~/remote_code` may be sensible.
 
+
+## rviz2
+
+Rviz2 is a visualization tool for ROS2 that allows you to view sensor data, robot models, and transformations in real time.
+It can be launched via:
+```bash
+rviz2
+```
+Some of the data from the ROS2 topics can be visualized via rviz2, the following are especially relevant.
+* TF - all of the transformations between the robot's parts (**NOTE: ** the transformation to the camera uses a depth camera and is incorrect, moving the camera around using the servos is also not accounted for).
+* Robot Model - displays the robot with the robot's URDF model (**NOTE: ** to properly display the robot, you need the stl files located in this repository under ros2_ws/src/simulations/mentorpi_description/meshes)
+* Odometry (odom) - displays the robot's movement
+* Laser Scan - visualizes the LIDAR sensor data
+* map - displays the generated SLAM map
+
+##Nav2
+
+Nav2 is a navigation stack for ROS2. It can be used for path planning, map-based navigation, lcoalization, etc. 
+More info can be found here: https://docs.nav2.org/index.html#
