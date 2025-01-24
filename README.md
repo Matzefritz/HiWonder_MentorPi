@@ -454,7 +454,7 @@ Some of the data from the ROS2 topics can be visualized via rviz2, the following
 * Laser Scan - visualizes the LIDAR sensor data
 * map - displays the generated SLAM map
 
-##Nav2
+## Nav2
 
 Nav2 is a navigation stack for ROS2. It can be used for path planning, map-based navigation, lcoalization, etc. 
 More info can be found here: https://docs.nav2.org/index.html#
