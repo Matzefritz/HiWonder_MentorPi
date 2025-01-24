@@ -203,7 +203,7 @@ When you are in the `ros2_ws` folder, you can build the workspace again with
 ```bash
 colcon build
 ```
-Make sure the build process succeeds.
+**Make sure** the build process succeeds.
 
 ## Set Environment Variables
 Because the MentorPi robot comes in different versions, the used version needs to be exported as an environment variable:
@@ -393,15 +393,35 @@ With
    - `strg`+`shift`+`o` you can split the terminal horizontally.
 
 ## SSH Setup
-* For easier development, connecting to the Raspberry Pi 5 via SSH is strongly recommended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work). Once this is made sure, you can look up the IP address from the Raspberry Pi 5 with:
+* For easier development, connecting to the Raspberry Pi 5 via SSH is strongly recommended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work).
+
+SSH is not standard installed on Ubuntu 24.04, so we need to install it:
+```bash
+sudo apt update
+sudo apt install openssh-server -y
+```
+Then, run: 
+```bash
+sudo systemctl enable ssh
+sudo systemctl start ssh
+```
+To verify that ssh is running, run:
+```bash
+sudo systemctl status ssh
+```
+It should say **active (running)**.
+
+Look up the IP address from the Raspberry Pi 5 with:
 ```bash
 hostname -I
 ```
-Now you can connect to the Raspberry Pi 5 from your computer:
+**Make sure**  to use a capital I.
+
+Now you can connect to the Raspberry Pi 5 from your other computer:
 ```bash
 ssh user@IP-address
 ```
-**Replace** `user` with your user and `IP-address` with the Ip-address of your Raspberry Pi 5. 
+**Replace** `user` with the username of your robot and `IP-address` with the IP-address of your Raspberry Pi 5. 
 
 * Additionally, installing `sshfs` on your machine will allow you to mount  remote file systems. This way you could for example mount the `workspace` folder of your Raspberry Pi 5 in your file system and conveniently edit files with any code editor you like on your machine.
 
