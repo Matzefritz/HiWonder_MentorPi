@@ -458,3 +458,13 @@ Some of the data from the ROS2 topics can be visualized via rviz2, the following
 
 Nav2 is a navigation stack for ROS2. It can be used for path planning, map-based navigation, lcoalization, etc. 
 More info can be found here: https://docs.nav2.org/index.html#
+
+## Using multiple robots on the same network
+
+Normally Ros2 topics and nodes are accessible over entire networks, if we have multiple robots on the same network, and each robot should be controlled separately, this will be a problem. To fix this, we can assign domain id's to the different laptops and robots on the network.
+By default, all robots and laptops are on ROS_DOMAIN_ID=0
+Each group should use a separate ROS_DOMAIN_ID. This can be set via the command:
+```bash
+export ROS_DOMAIN_ID=10
+```
+This needs to be set on the robot as well as on the laptop.
