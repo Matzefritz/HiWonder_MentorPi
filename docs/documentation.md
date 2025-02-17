@@ -61,3 +61,18 @@ The `ldlidar_node` (the node, not the package. For this package the node name an
 ## driver
 ## orchestrator_launch
 ## simulations
+
+
+# IMU Calibration
+The IMU is factory calibrated, however in our setup it is overwritten and replaced with a default file. Using the other calibration file works but isn't ideal.
+The IMU can be calibrated with the following steps. First, launch the controller:
+```bash
+ros2 launch ros_robot_controller ros_robot_controller.launch.py
+```
+Then, start the IMU calibration:
+```bash
+ros2 run imu_calib do_calib --ros-args -r imu:=/ros_robot_controller/imu_raw --param output_file:=/home/[robot_name]/workspace/ros2_ws/src/calibration/config/imu_calib.yaml
+```
+Make sure to use the name of your robot. The IMU calibration tool will prompt you to align the robot in different orientations.
+The orientations are slightly different from those typically used for robots (the x and y axis are switched).
+![Robot Orientation](/images/robot_orientation.png)
