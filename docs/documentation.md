@@ -73,6 +73,12 @@ Then, start the IMU calibration:
 ```bash
 ros2 run imu_calib do_calib --ros-args -r imu:=/ros_robot_controller/imu_raw --param output_file:=/home/[robot_name]/workspace/ros2_ws/src/calibration/config/imu_calib.yaml
 ```
-Make sure to use the name of your robot. The IMU calibration tool will prompt you to align the robot in different orientations.
-The orientations are slightly different from those typically used for robots (the x and y axis are switched).
+Make sure to use the name of your robot. 
+The IMU calibration tool will prompt you to align the robot in different orientations.
+The orientations are slightly different from those typically used by ROS2 (the x and y axis are switched).
 ![Robot Orientation](/images/robot_orientation.png)
+At the end of the calibration, you can check if the calibration worked with:
+```bash
+ros2 launch peripherals imu_view.launch.py
+```
+More info can be found here: https://drive.google.com/drive/folders/1qu4A3Uby4zEpbni56ReNzecZyhYH9-jl 
