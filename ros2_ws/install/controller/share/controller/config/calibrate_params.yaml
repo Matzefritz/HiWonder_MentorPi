@@ -1,4 +1,0 @@
-/**:
-  ros__parameters:
-    linear_correction_factor: 0.93
-    angular_correction_factor: 1.01
