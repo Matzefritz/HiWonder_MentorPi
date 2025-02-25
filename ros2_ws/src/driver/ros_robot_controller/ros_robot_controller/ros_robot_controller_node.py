@@ -69,7 +69,7 @@ class RosRobotController(Node):
         """
         从 YAML 文件中读取舵机偏差设置。
         """
-        config_path = os.path.join(os.environ['HOME'], 'workspace/software/Servo_upper_computer/servo_config.yaml')
+        config_path = os.path.join(os.environ['HOME'], 'workspace/ros2_ws/src/driver/controller/config/servo_config.yaml')
         try:
             with open(config_path, 'r') as file:
                 config = yaml.safe_load(file)

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # encoding: utf-8
+import os
 import rclpy
 from rclpy.node import Node
 from std_srvs.srv import Trigger
@@ -19,8 +20,10 @@ class InitPose(Node):
         self.servo_state_pub = self.create_publisher(SetPWMServoState, 'ros_robot_controller/pwm_servo/set_state', 1)
         self.client = self.create_client(Trigger, namespace + '/controller_manager/init_finish')
         self.client.wait_for_service()
+        
+        config_path = os.path.join(os.environ['HOME'], 'workspace/ros2_ws/src/driver/controller/config/servo_config.yaml')
 
-        with open('/home/ubuntu/software/Servo_upper_computer/servo_config.yaml', 'r') as file:
+        with open(config_path, 'r') as file:
             servo_offsets = yaml.safe_load(file)
 
         pulse = self.get_parameters_by_prefix('servo')
