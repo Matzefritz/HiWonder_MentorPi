@@ -211,13 +211,6 @@ The finished file structure should look like the following:
             |-- driver
             |-- orchestrator_launch
             |-- simulations
-    |-- software
-        |-- Servo_upper_computer
-        |-- collect_picture
-        |-- lab_tool
-        |-- labelImg
-        |-- tool
-        |-- yolov5
 ```
 4. **Build the workspace again**  
 When you are in the `ros2_ws` folder, you can build the workspace again with
