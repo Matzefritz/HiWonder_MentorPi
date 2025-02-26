@@ -114,6 +114,11 @@ sudo apt install ros-jazzy-image-proc
 ```bash
 sudo apt install ros-jazzy-apriltag-ros
 ```
+* **apriltag-msgs**
+   - A ROS2 package with the proprietary messages used by the `apriltag` package.
+```bash
+sudo apt install ros-jazzy-apriltag-msgs
+``` 
 * **slam_toolbox**  
    - A ROS 2 package for Simultaneous Localization and Mapping (SLAM), providing tools for 2D SLAM, map merging, and long-term mapping.  
    - Essential for robots that require real-time environment mapping and localization in unknown areas.  
@@ -339,6 +344,46 @@ ros2 run image_decompressor decompress_image_node
 ```bash
 ros2 run rqt_image_view rqt_image_view
 ```
+
+
+## Test AprilTag
+The AprilTag detection can only detect Tags in a rectified image. Meaning straight object in real live also appear straight in the image. The `image_proc` package we installed earlier can handle this for us, given we calibrate the camera first. 
+
+
+### Camera Calibration
+You can calibrate the image with the ROS2 package `camera-calibration`. First, make sure the camera node is running:
+```bash
+ros2 launch peripherals usb_cam.launch.py
+```
+Follow this tutorial on camera calibration: https://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration  
+The correct command for our workspace is:
+```bash
+ros2 run camera_calibration cameracalibrator --size MxN --square X image:=/ascamera/camera_publisher/rgb0/image camera:=/ascamer
+```
+Make sure to replace **M** with the vertical height of your calibration checkerboard and **N** with the horizontal length of your calibration checkerboard. **X** is the length of one square of the checkerboard in meter. Clicking on Upload will save the calibration file at the correct place. If everything works correctly you can see where the file was saved in the comand window in which `usb_cam` is running.  
+
+
+### Rectification Pipeline
+As already discussed we will use the `image_proc` package to rectify our raw image the `usb_cam` node provides. This is easiest with a launch script from the peripherals package, which launches both the `usb_cam` node and the `image_proc` node. So bevore running make sure the `usb_cam` is not already running on its own.
+```bash
+ros2 launch peripherals image_pipeline.launch.py
+```
+The topic `/apriltag_detections` should now also be published. Just like the raw image, you can display this rectified version with:
+```bash
+ros2 run rqt_image_view rqt_image_view
+```
+
+### AprilTag Node
+You can start the AprilTag detection with the launchfile brovided in the `peripherals` package:
+```bash
+ros2 launch peripherals apriltag.launch.python3-pydantic
+```
+This launchfile references the `apriltag_config.yaml` located in the `config` folder of the `peripherals` package. This config files specifies the used detection algorithm and Tag family. Every Tag that can be detected must also be listed here. The 6 Tags of the 6 sides of the provided qube are already added to this file.\
+The AprilTag detection should now be working. To verify place the cube in front of the camera and listen on the `/apriltag_detection` topic:
+```bash
+ros2 topic echo /apriltag_detection
+```
+
 
 ## Test the LIDAR
 To test the LIDAR, you need the `controller` node again:
