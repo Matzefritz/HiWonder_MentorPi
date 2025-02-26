@@ -108,6 +108,12 @@ sudo apt install ros-jazzy-camera-calibration
 ```bash
 sudo apt install ros-jazzy-image-proc
 ```
+* **apriltag-ros**
+   - A ROS2 package for detecting **AprilTags**, which are fiducial markers used for **robot localization and object tracking**.
+   - Important for object detection and relative position calculation.
+```bash
+sudo apt install ros-jazzy-apriltag-ros
+```
 * **slam_toolbox**  
    - A ROS 2 package for Simultaneous Localization and Mapping (SLAM), providing tools for 2D SLAM, map merging, and long-term mapping.  
    - Essential for robots that require real-time environment mapping and localization in unknown areas.  
@@ -150,13 +156,6 @@ sudo apt install python3-transforms3d
 ```bash
 sudo apt install python3-pydantic
 ```
-
-## Installing apriltag-ros
-`apriltag_ros` is a ROS2 package for detecting **AprilTags**, which are fiducial markers used for **robot localization and object tracking**. You can easily install the package with:
-```bash
-sudo apt install ros-jazzy-apriltag-ros
-```
-In one task you need to find a cube in the maze. This cube is covered in 6 individual **AprilTags**. The AprilTag detection needs two files to work properly. One, `settings.yaml`, in which detection parameters can be set. Second, `tags.yaml` in which each Tag that can be detected is listed. Both these files are provided by this repository in the AprilTag folder. 
 
 ## Setup your ROS2 Workspace
 In addition to the global ROS2 workspace we just installed in `/opt/ros/jazzy`, an additional workspace in your home directory `/home/user` is needed. (Substitute your home directory).
