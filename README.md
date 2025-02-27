@@ -197,7 +197,6 @@ source /home/user/workspace/ros2_ws/install/local_setup.bash
 
 2. **Download the needed Packages from this repository**
     - Download all folders from the `src` folder and place it in **your** `src` folder.
-    - Download the `software` folder and place it in **your** `workspace` folder.
 
 * **Finished file structure**  
 The finished file structure should look like the following:
