@@ -239,6 +239,7 @@ export MACHINE_TYPE=MentorPi_Mecanum
 ```
 This command should also be added to your .bashrc file to ensure the availability of the variable upon startup of a new terminal.
 <br>
+<br>
 
 ## Set User Permissions
 Communication with the expansion board occurs via a serial connection. To enable access, you must ensure your user belongs to the appropriate group with permissions to access serial devices. This is achieved with:
