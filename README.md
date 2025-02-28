@@ -43,7 +43,6 @@ For more information, see the ROS2 documentation: https://docs.ros.org/en/jazzy/
 
 * This README assumes basic knowledge about the LINUX file system and how to navigate it. For an introduction see: https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
 <br>
-<br>
 
 ## Linux Setup
 First, `Ubuntu 24.04` needs to be installed on the SD card of the Raspberry Pi 5. The SD card is located under the Raspberry PI 5 as shown below:
@@ -64,7 +63,7 @@ Open the Raspberry PI Imager Tool, choose `Raspberry Pi 5` under *Device* and un
 2. **Boot for the first time**
 * Put the SD-card in the Raspberry Pi 5, and connect a mouse, keyboard and a monitor. The monitor can be connected via a micro HDMI cable, the micro HDMI port is located on the Raspberry Pi 5 on the forward facing side of the robot. A mouse and a keybaord can be connected via USB using the USB dock on the backward facing side of the robot. Then, boot the robot using the switch on the black PCB above the Raspberry Pi 5. 
 * Follow the installer for Ubuntu. You can choose your own username and password.
-
+<br>
 
 ## Installing ROS2
 * Follow this guide: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html to install ROS2 Jazzy on the Raspberry Pi 5. For development, it makes a lot of sense to also have an additional computer with ROS2 installed. This makes remotely diagnosing and controlling the robot much easier. Chose the **Desktop Install** both for the robot and, if applicable, your computer. 
@@ -90,7 +89,7 @@ to the end of the file. Save the file and reload by either entering
 source ~/.bashrc
 ```
 or by closing the terminal and opening a new one (doing this runs the .bashrc file).
-
+<br>
 
 ### Install Additional Dependencies
 First, update your package manager:
@@ -168,7 +167,7 @@ sudo apt install python3-transforms3d
 ```bash
 sudo apt install python3-pydantic
 ```
-
+<br>
 
 ## Setup your ROS2 Workspace
 In addition to the global ROS2 workspace we just installed in `/opt/ros/jazzy`, an additional workspace in your home directory `/home/user` is needed. (Substitute your home directory).
@@ -229,7 +228,7 @@ When you are in the `ros2_ws` folder, you can build the workspace again with
 colcon build
 ```
 **Make sure** the build process succeeds.
-
+<br>
 
 ## Set Environment Variables
 Because the MentorPi robot comes in different versions, the used version needs to be exported as an environment variable:
@@ -237,6 +236,7 @@ Because the MentorPi robot comes in different versions, the used version needs t
 export MACHINE_TYPE=MentorPi_Mecanum
 ```
 This command should also be added to your .bashrc file to ensure the availability of the variable upon startup of a new terminal.
+<br>
 
 ## Set User Permissions
 Communication with the expansion board occurs via a serial connection. To enable access, you must ensure your user belongs to the appropriate group with permissions to access serial devices. This is achieved with:
@@ -244,7 +244,7 @@ Communication with the expansion board occurs via a serial connection. To enable
 sudo usermod -a -G dialout $USER
 ```
 You need to restart your Raspberry Pi 5 for this rule to take effect. 
-
+<br>
 
 # Testing
 If you successfully installed everything we can start testing.
@@ -303,7 +303,7 @@ ros2 launch peripherals joystick_control.launch.py
 ```
 This launches the joystick_control part of the `peripherals` package. This node handles the controller. Make sure the controller is switched on. The controller should now be connected to the USB dongle plugged in to the Raspberry Pi 5. 
 The left joystick controls the linear motion of the robot, while the right controls the rotational momentum. With the D-Pad, you can additionally rotate the camera around. Pressing "START" resets the camera position.
-
+<br>
 
 ## Test the Camera
 
@@ -331,7 +331,7 @@ these topics added to your list. `/ascamera/camera_publisher/rgb0/image` is the 
 ros2 run rqt_image_view rqt_image_view
 ```
 A window should open. In the top left dropdown menu you can choose `/ascamera/camera_publisher/rgb0/image` as the topic you want to display. Now the live video feed from the camera should be displayed.
-
+<br>
 
 ### Test the Camera from a Remote Computer (a bit more advanced)
 Viewing the video feed from a remote computer is not as straight forward. While all `ROS2` topics published by one machine are visible by all machines running `ROS2` in the same network by default, displaying the raw video stream on a remote machine is not generally possible (bandwidth limitation). Instead, the `/ascamera/camera_publisher/rgb0/image_compressed` topic published by the `camera_node` is utilized. By running a decompresser node on the receiving machine, we can decompress the compressed image on the receiving machine and then display this decompressed image.
@@ -354,11 +354,11 @@ ros2 run image_decompressor decompress_image_node
 ```bash
 ros2 run rqt_image_view rqt_image_view
 ```
-
+<br>
 
 ## Test AprilTag
 The AprilTag detection can only detect tags in a rectified image. Meaning straight objects in real life also appear straight in the image. The `image_proc` package we installed earlier can handle this for us, given we calibrate the camera first. 
-
+<br>
 
 ### Camera Calibration
 You can calibrate the image with the ROS2 package `camera-calibration`. First, make sure the camera node is running:
@@ -371,7 +371,7 @@ The correct command for our workspace is:
 ros2 run camera_calibration cameracalibrator --size MxN --square X image:=/ascamera/camera_publisher/rgb0/image camera:=/ascamer
 ```
 Make sure to replace **M** with the vertical height of your calibration checkerboard and **N** with the horizontal length of your calibration checkerboard. **X** is the length of one square of the checkerboard in meters. Clicking on Upload will save the calibration file at the correct place. If everything works correctly, you can see where the file was saved in the command window in which `usb_cam` is running.  
-
+<br>
 
 ### Rectification Pipeline
 As already discussed, we will use the `image_proc` package to rectify our raw image the `usb_cam` node provides. This is easiest with a launch script from the peripherals package, which launches both the `usb_cam` node and the `image_proc` node. So before running, make sure the `usb_cam` is not already running on its own.
@@ -382,6 +382,7 @@ The topic `/apriltag_detections` should now also be published. Just like the raw
 ```bash
 ros2 run rqt_image_view rqt_image_view
 ```
+<br>
 
 ### AprilTag Node
 You can start the AprilTag detection with the launch file provided in the `peripherals` package:
@@ -393,7 +394,7 @@ The AprilTag detection should now be working. To verify, place the cube in front
 ```bash
 ros2 topic echo /apriltag_detection
 ```
-
+<br>
 
 ## Test the LIDAR
 To test the LIDAR, you need the `controller` node again:
@@ -421,7 +422,7 @@ rviz2
 ```
 In `rviz2` click on *map* next to *Fixed Frame* in the *Global Options* on the left side. Select *base_footprint* from the dropdown menu. Then click on *add* in the lover left corner and select *LaserScan* from the list. Press *OK*. *LaserScan* should now appear in the left list in red. Click on it to open a dropdown. Click right of *Topic* in the whitespace. An empty dropdown menu should appear. Select `/ldlidar_node/scan` from this menu. The live LIDAR points should now be displayed in the middle. By selecting *Points* next to the *Style* field, you can make the points better visible.
 ![Alt Text](images/rviz_lidar_points.png "Rviz Lidar Points")
-
+<br>
 
 ## Test SLAM
 **SLAM** is short for *Simultaneous Localization and Mapping* and describes the process of mapping one's surroundings while localizing oneself inside this map. It is key for autonomous navigation in an unknown environment. The `ROS2` package `slam_toolbox` can be used to perform this using live LIDAR data and a complete transformation tree. This tree describes the position of the LIDAR in respect to the main coordinate origin of the robot. This transformation tree is implemented in the `controller` package.
@@ -449,7 +450,7 @@ rviz2
 ros2 launch peripherals joystick_control.launch.py
 ```
 You should now be able to move around with the robot while the map is continuously updated.
-
+<br>
 
 # Quality of Life Additions
 
@@ -461,6 +462,7 @@ sudo apt install terminator
 With
    - `strg`+`shift`+`e` you can split the terminal vertically.
    - `strg`+`shift`+`o` you can split the terminal horizontally.
+<br>
 
 ## SSH Setup
 * For easier development, connecting to the Raspberry Pi 5 via SSH is strongly recommended. For this, the Raspberry Pi 5 needs to be connected to the same network as the device from which you want to access the Raspberry Pi 5 (Eduroam does not work).
@@ -506,7 +508,7 @@ sshfs user@IP-address:/remote/file/path /local/file/path
 Of course **replace** `user` `IP-adress` `/remote/file/path` and `local/file/path` with your specific data. 
    - `/remote/file/path` is the path on the remote machine you want to make accessible from your machine
    - `local/file/path` is the file path on your local machine you want to mount the remote folder in. Creating a special folder like `~/remote_code` may be sensible.
-
+<br>
 
 ## rviz2
 Rviz2 is a visualization tool for ROS2 that allows you to view sensor data, robot models, and transformations in real time.
@@ -520,7 +522,7 @@ Some of the data from the ROS2 topics can be visualized via rviz2, the following
 * Odometry (odom) - displays the robot's movement
 * Laser Scan - visualizes the LIDAR sensor data
 * map - displays the generated SLAM map
-
+<br>
 
 ## Multiple Robots on the Same Network
 ROS2 topics and nodes are accessible over the entire network. When using multiple robots in the same network, you may want to separate the networks from each other. This is easily achieved via the `ROS_DOMAIN_ID`. All ROS2 clients with the same exported ID can see each other. The default ID is `0`.
