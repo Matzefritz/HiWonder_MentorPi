@@ -335,7 +335,8 @@ these topics added to your list. `/ascamera/camera_publisher/rgb0/image` is the 
 ```bash
 ros2 run rqt_image_view rqt_image_view
 ```
-A window should open. In the top left dropdown menu you can choose `/ascamera/camera_publisher/rgb0/image` as the topic you want to display. Now the live video feed from the camera should be displayed.
+A window should open. In the top left dropdown menu choose `/ascamera/camera_publisher/rgb0/image` as the topic. Now the live video feed from the camera should be displayed.\
+You may need to physically adjust the focus by turning the lens of the camera. Pliers may be needed.
 <br>
 <br>
 
@@ -382,7 +383,7 @@ Make sure to replace **M** with the vertical height of your calibration checkerb
 <br>
 
 ### Rectification Pipeline
-As already discussed, we will use the `image_proc` package to rectify our raw image the `usb_cam` node provides. This is easiest with a launch script from the peripherals package, which launches both the `usb_cam` node and the `image_proc` node. So before running, make sure the `usb_cam` is not already running on its own.
+As already discussed, we will use the `image_proc` package to rectify our raw image the `usb_cam` node provides. This is easiest with a launch script from the `peripherals` package, which launches both the `usb_cam` node and the `image_proc` node. So before running, make sure the `usb_cam` is not already running on its own.
 ```bash
 ros2 launch peripherals image_pipeline.launch.py
 ```
@@ -395,9 +396,9 @@ ros2 run rqt_image_view rqt_image_view
 ### AprilTag Node
 You can start the AprilTag detection with the launch file provided in the `peripherals` package:
 ```bash
-ros2 launch peripherals apriltag.launch.python3-pydantic
+ros2 launch peripherals apriltag.launch.py
 ```
-This launch file references the `apriltag_config.yaml` located in the `config` folder of the `peripherals` package. This config file specifies the used detection algorithm and Tag family. Every tag that can be detected must also be listed here. The 6 Tags of the 6 sides of the provided cube are already added to this file.\
+This launch file references the `apriltag_config.yaml` located in the `config` folder of the `peripherals` package. This config file specifies the used detection algorithm and the tag-family. Every tag that can be detected must also be listed here. The 6 Tags of the 6 sides of the provided cube are already added to this file.\
 The AprilTag detection should now be working. To verify, place the cube in front of the camera and listen to the `/apriltag_detection` topic:
 ```bash
 ros2 topic echo /apriltag_detection
