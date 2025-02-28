@@ -5,6 +5,7 @@ This repository aims to provide a reasonable starting position for ROS2 developm
 
 ![Alt Text](images/mentor_Pi.jpg "RobotPicture")
 
+
 # Table of Contents
 - [General Information](#general-information)  
 - [Basic Setup](#basic-setup)  
@@ -26,6 +27,7 @@ This repository aims to provide a reasonable starting position for ROS2 developm
    - [rviz2](#rviz2)
    - [Nav2](#nav2)
 
+
 # General Information
 The MentorPi platform from Hiwonder is a Raspberry Pi 5 based robot platform. The operating system we will be installing on the Raspberry Pi 5 is Ubuntu 24.04, which is a version of Linux. Therefore the robot can be thought of as a normal computer, that can be used with a mouse, keyboard and monitor. The robot uses mecanum wheels, and features a monocular camera, which can be moved around, a LIDAR scanner, an inertial measurement unit (IMU), and wheel encoders.
 As a development framework, the Robot Operating System (ROS2) is used. The version used is ROS2 Jazzy. ROS2 is an open-source framework for building robotic applications. It acts as the middleware between the different components of the robot and also provides tools, libraries, hardware abstraction, device drivers and more for standardized robot development.
@@ -39,6 +41,7 @@ For more information, see the ROS2 documentation: https://docs.ros.org/en/jazzy/
 * This README walks you through the initial setup for your robot. How and why things work may not be explained in detail. For explanation of the project structure and information about nodes and topics, see the project documentation in the `/docs` folder of this repository.
 
 * This README assumes basic knowledge about the LINUX file system and how to navigate it. For an introduction see: https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
+
 
 ## Linux Setup
 First, `Ubuntu 24.04` needs to be installed on the SD card of the Raspberry Pi 5. The SD card is located under the Raspberry PI 5 as shown below:
@@ -59,6 +62,7 @@ Open the Raspberry PI Imager Tool, choose `Raspberry Pi 5` under *Device* and un
 2. **Boot for the first time**
 * Put the SD-card in the Raspberry Pi 5, and connect a mouse, keyboard and a monitor. The monitor can be connected via a micro HDMI cable, the micro HDMI port is located on the Raspberry Pi 5 on the forward facing side of the robot. A mouse and a keybaord can be connected via USB using the USB dock on the backward facing side of the robot. Then, boot the robot using the switch on the black PCB above the Raspberry Pi 5. 
 * Follow the installer for Ubuntu. You can choose your own username and password.
+
 
 ## Installing ROS2
 * Follow this guide: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html to install ROS2 Jazzy on the Raspberry Pi 5. For development, it makes a lot of sense to also have an additional computer with ROS2 installed. This makes remotely diagnosing and controlling the robot much easier. Chose the **Desktop Install** both for the robot and, if applicable, your computer. 
@@ -84,6 +88,7 @@ to the end of the file. Save the file and reload by either entering
 source ~/.bashrc
 ```
 or by closing the terminal and opening a new one (doing this runs the .bashrc file).
+
 
 ### Install Additional Dependencies
 First, update your package manager:
@@ -162,6 +167,7 @@ sudo apt install python3-transforms3d
 sudo apt install python3-pydantic
 ```
 
+
 ## Setup your ROS2 Workspace
 In addition to the global ROS2 workspace we just installed in `/opt/ros/jazzy`, an additional workspace in your home directory `/home/user` is needed. (Substitute your home directory).
 In general, ROS2 packages installed via the package manager get installed in the global workspace, while your own projects and code are usually organized in a separate ROS2 workspace inside your home folder. We will follow this structure.
@@ -222,6 +228,7 @@ colcon build
 ```
 **Make sure** the build process succeeds.
 
+
 ## Set Environment Variables
 Because the MentorPi robot comes in different versions, the used version needs to be exported as an environment variable:
 ```bash
@@ -235,6 +242,7 @@ Communication with the expansion board occurs via a serial connection. To enable
 sudo usermod -a -G dialout $USER
 ```
 You need to restart your Raspberry Pi 5 for this rule to take effect. 
+
 
 # Testing
 If you successfully installed everything we can start testing.
@@ -293,6 +301,7 @@ ros2 launch peripherals joystick_control.launch.py
 ```
 This launches the joystick_control part of the `peripherals` package. This node handles the controller. Make sure the controller is switched on. The controller should now be connected to the USB dongle plugged in to the Raspberry Pi 5. 
 The left joystick controls the linear motion of the robot, while the right controls the rotational momentum. With the D-Pad, you can additionally rotate the camera around. Pressing "START" resets the camera position.
+
 
 ## Test the Camera
 
@@ -411,6 +420,7 @@ rviz2
 In `rviz2` click on *map* next to *Fixed Frame* in the *Global Options* on the left side. Select *base_footprint* from the dropdown menu. Then click on *add* in the lover left corner and select *LaserScan* from the list. Press *OK*. *LaserScan* should now appear in the left list in red. Click on it to open a dropdown. Click right of *Topic* in the whitespace. An empty dropdown menu should appear. Select `/ldlidar_node/scan` from this menu. The live LIDAR points should now be displayed in the middle. By selecting *Points* next to the *Style* field, you can make the points better visible.
 ![Alt Text](images/rviz_lidar_points.png "Rviz Lidar Points")
 
+
 ## Test SLAM
 **SLAM** is short for *Simultaneous Localization and Mapping* and describes the process of mapping one's surroundings while localizing oneself inside this map. It is key for autonomous navigation in an unknown environment. The `ROS2` package `slam_toolbox` can be used to perform this using live LIDAR data and a complete transformation tree. This tree describes the position of the LIDAR in respect to the main coordinate origin of the robot. This transformation tree is implemented in the `controller` package.
 1. Launch the `controller` node: (if not already running)
@@ -436,7 +446,8 @@ rviz2
 ```bash
 ros2 launch peripherals joystick_control.launch.py
 ```
-Now you should be able to move around with the robot while the map is continuously updated.
+You should now be able to move around with the robot while the map is continuously updated.
+
 
 # Quality of Life Additions
 
@@ -496,7 +507,6 @@ Of course **replace** `user` `IP-adress` `/remote/file/path` and `local/file/pat
 
 
 ## rviz2
-
 Rviz2 is a visualization tool for ROS2 that allows you to view sensor data, robot models, and transformations in real time.
 It can be launched via:
 ```bash
@@ -509,17 +519,10 @@ Some of the data from the ROS2 topics can be visualized via rviz2, the following
 * Laser Scan - visualizes the LIDAR sensor data
 * map - displays the generated SLAM map
 
-## Nav2
 
-NAV2 is a navigation stack for ROS2. It can be used for path planning, map-based navigation, lcoalization, etc. 
-More info can be found here: https://docs.nav2.org/index.html#
-
-## Using multiple robots on the same network
-
-Normally ROS2 topics and nodes are accessible over entire networks, if we have multiple robots on the same network, and each robot should be controlled separately, this will be a problem. To fix this, we can assign domain id's to the different laptops and robots on the network.
-By default, all robots and laptops are on ROS_DOMAIN_ID=0
-Each group should use a separate ROS_DOMAIN_ID. This can be set via the command:
+## Multiple Robots on the Same Network
+ROS2 topics and nodes are accessible over the entire network. When using multiple robots in the same network, you may want to separate the networks from each other. This is easily achieved via the `ROS_DOMAIN_ID`. All ROS2 clients with the same exported ID can see each other. The default ID is `0`.
+You can change the ID of your ROS2 client for example to id `10` with:
 ```bash
 export ROS_DOMAIN_ID=10
 ```
-This needs to be set on the robot as well as on the laptop. This command can also be added to the `.bahsrc` file.
