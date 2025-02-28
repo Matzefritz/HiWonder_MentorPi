@@ -33,7 +33,7 @@ The MentorPi platform from Hiwonder is a Raspberry Pi 5 based robot platform. Th
 As a development framework, the Robot Operating System (ROS2) is used. The version used is ROS2 Jazzy. ROS2 is an open-source framework for building robotic applications. It acts as the middleware between the different components of the robot and also provides tools, libraries, hardware abstraction, device drivers and more for standardized robot development.
 For more information, see the ROS2 documentation: https://docs.ros.org/en/jazzy/index.html
 <br>
-<br>
+
 # Basic Setup
 * In this chapter, the basic setup of the robot is explained. You will install Linux, ROS2 and all necessary drivers for the motors, servos, camera and LIDAR on the Raspberry Pi 5 of the robot.
 `Ubuntu 24.04` together with `ROS2 Jazzy` is used in this project.
@@ -41,7 +41,7 @@ For more information, see the ROS2 documentation: https://docs.ros.org/en/jazzy/
 * This README walks you through the initial setup for your robot. How and why things work may not be explained in detail. For explanation of the project structure and information about nodes and topics, see the project documentation in the `/docs` folder of this repository.
 
 * This README assumes basic knowledge about the LINUX file system and how to navigate it. For an introduction see: https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
-
+<br>
 
 ## Linux Setup
 First, `Ubuntu 24.04` needs to be installed on the SD card of the Raspberry Pi 5. The SD card is located under the Raspberry PI 5 as shown below:
