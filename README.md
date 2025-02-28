@@ -43,6 +43,7 @@ For more information, see the ROS2 documentation: https://docs.ros.org/en/jazzy/
 
 * This README assumes basic knowledge about the LINUX file system and how to navigate it. For an introduction see: https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics
 <br>
+<br>
 
 ## Linux Setup
 First, `Ubuntu 24.04` needs to be installed on the SD card of the Raspberry Pi 5. The SD card is located under the Raspberry PI 5 as shown below:
