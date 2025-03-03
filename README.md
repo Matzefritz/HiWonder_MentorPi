@@ -30,6 +30,7 @@ This repository aims to provide a reasonable starting position for ROS2 developm
    - [SSH Setup](#ssh-setup)
    - [rviz2](#rviz2)
    - [Multiple Robots on the Same Network](#multiple-robots-on-the-same-network)
+   - [How To Start Development](#how-to-start-development)
 
 
 # General Information
@@ -545,3 +546,17 @@ You can change the ID of your ROS2 client for example to id `10` with:
 ```bash
 export ROS_DOMAIN_ID=10
 ```
+
+## How To Start Development
+If you are ready to implement some code, here are some general tips and ideas to get you started.\
+* If you want to implement some functionality, it makes probably sense to organize it in a new package, with
+```bash
+ros2 pkg create <package_name> --build-type ament_cmake
+```
+you can create a new cmake package, and with
+```bash
+ros2 pkg create <package_name> --build-type ament_cmake
+```
+you create a new python package. **Make sure** you are inside your build folder (`ros_ws/src`), before entering these commands.
+
+* If you installed a package via the package manager, it is installed in `/opt/ros/jazzy/share`. Some standard launch and parameter files are usually given here. If you want to use such a "standard package" you most likely need to at least adjust the launch script and the parameter files. It is best practice to **not** modify installed packages in `/opt/ros/...`, instead you should organize them inside a package of your own workspace. In our structure, both the `orchestrator_launch` and the `peripherals` package are good places for this. You can copy the given launch scripts and parameter files from `/opt/ros/jazzy/share/package_name/` into one of these packages and launch the installed packages from there.  
