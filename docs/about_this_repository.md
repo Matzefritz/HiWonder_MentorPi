@@ -1,0 +1,2 @@
+This Repository is mainly based on the ROS2 workspace the robot ships with. It has been stripped of for our use "unimportant" packages and ported from ubuntu 22.4 to 24.04.
+You can access the whole documentation from Hiwonder here: 

@@ -19,13 +19,17 @@ This repository aims to provide a reasonable starting position for ROS2 developm
    - [Test the Camera](#test-the-camera)
       - [Test the Camera with a connected Monitor](#test-the-camera-with-a-connected-monitor)
       - [Test the Camera from a Remote Computer (a bit more advanced)](#test-the-camera-from-a-remote-computer-a-bit-more-advanced)
+   - [Test AprilTag](#test-apriltag)
+      - [Camera Calibration](#camera-calibration)
+      - [Rectification Pipeline](#rectification-pipeline)
+      - [AprilTag Node](#apriltag-node)
    - [Test the LIDAR](#test-the-lidar)
    - [Test SLAM](#test-slam)
 - [Quality of Life Additions](#quality-of-life-additions)
    - [Terminator](#terminator)
    - [SSH Setup](#ssh-setup)
    - [rviz2](#rviz2)
-   - [Nav2](#nav2)
+   - [Multiple Robots on the Same Network](#multiple-robots-on-the-same-network)
 
 
 # General Information

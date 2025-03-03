@@ -49,7 +49,7 @@ After completion of this repository's README, the following packages are already
 ## calibration
 The package contains:
 - the calibration files for the IMU
-- the launch files and python scripts for the angular and linear velocity calibration (Note: the calibration file for the angular and linear velocity calibration is not stored in calibration, instead it is stored under `driver/controller/config/calibrate_params.yaml`) 
+- the launch files and python scripts for the angular and linear velocity calibration (Note: the calibration file for the angular and linear velocity calibration is not stored in the `calibration` package, instead it is stored under `driver/controller/config/calibrate_params.yaml`) 
 
 ## driver
 This folder contains the code necessary to communicated with Hiwonders extension board. This board handles the 4 motors, the IMU and the 2 camera servos. The code is structured like this:
@@ -64,16 +64,16 @@ Each of the four subfolders are packages. The `/controller` package contains the
 
 #
 
-The `controller` package includes the `controller.launch.py` launch file (located in `/driver/controller/launch`). This file basically starts up the robot. Here is what it does: 
-1. First, it launches the file `odom_publisher.launch.py` (in `driver/controller/launch`) is launched, which then starts the following three files
+All this functionality can be launched via `controller.launch.py` (located in `/driver/controller/launch`). This launchfile starts a cascaded launch procedure:
+1. First, `odom_publisher.launch.py` (in `driver/controller/launch`) is launched, which intern launches:
     
-    1. `robot_description.launch.py` - (located in `/simulations/mentorpi_description`), this launches a `/robot_description` topic and the `/tf` and `/tf_static` topics, which publish the transforms.
-    2. `ros_robot_controller.launch.py` - This launches the `ros_robot_controller_node`, which is responsible for most functions of the robot: it publishes the raw IMU data, sets the led, buzzer, motors, servos, etc. and communicates with the extension board
+    1. `robot_description.launch.py` - (located in `/simulations/mentorpi_description`), this node exposes the `/robot_description`, `/tf` and `/tf_static` topics, which publish the transforms.
+    2. `ros_robot_controller.launch.py` - This launches the `ros_robot_controller_node`, responsible for most functions of the robot: it publishes the raw IMU data, sets the led, buzzer, motors, servos, etc. and communicates with the extension board.
     3. `odom_publisher_node` - the `odom_publisher_node` calculates the robot's position and orientation based on velocity commands and then publishes raw odometry data on the `/odom_raw` topic.
 
-2. Then, it launches `imu_filter.launch.py`, which launches another launch file under `peripherals/launch`. This launch file first applies the IMU calibration and then starts an IMU filter node. The raw IMU data is filtered with the `imu_complementary_filter` package (http://wiki.ros.org/imu_complementary_filter) and published on the `/imu` topic. 
+2. Secondly, `imu_filter.launch.py` from the `peripherals` package. Both the `imu_calib_node` and the `imu_filter_node` are started. The raw IMU data is additionally filtered by the `imu_complementary_filter` package (http://wiki.ros.org/imu_complementary_filter) and published on the `/imu` topic. 
 
-3. Lastly, an `ekf_filter_node` is started, this node uses an extended Kalman filter is started through the `robot_localization` (http://docs.ros.org/en/melodic/api/robot_localization/html/index.html) package
+3. Lastly, `ekf_filter_node` is started, this node uses an extended Kalman filter from the `robot_localization` (http://docs.ros.org/en/melodic/api/robot_localization/html/index.html) package.
 
 After launching `controller.launch.py`, all of the main functions of the robot should be running:
 - robot_description should be published
@@ -86,19 +86,19 @@ After launching `controller.launch.py`, all of the main functions of the robot s
 ## imu_calib
 This package contains the code required to run the IMU calibration. More info on how to calibrate the IMU can be found in the [IMU calibration section](#imu-calibration-instructions). Note: the IMU calibration file is not saved in this folder, it is saved in the `calibration` package.
 
-## ldrobot-lidar-ros2 -> ldlidar_node
-This package handles the communication with the LiDAR sensor, the code is from this repository: https://github.com/Myzhar/ldrobot-lidar-ros2  
+## ldrobot-lidar-ros2
+This package handles the communication with the LiDAR sensor, it is based on this repository: https://github.com/Myzhar/ldrobot-lidar-ros2  
 The actual ROS2 package lies in the `ldlidar_node` folder. The `ldlidar.yaml` file in the folder `ldlidar_node/params` defines important hardware dependent variables, such as the used serial port and the exact model of the LiDAR.
 The node `ldlidar_node` (the package and node name are identical for this package) can be launched with a launch file provided in the `launch` folder of the package. Multiple launch files are provided, altough only `ldlidar.launch.py` has been tested.
 
 ## orchestrator_launch
-This package contains the files to launch SLAM. The `slam_toolbox.launch.py` starts up the SLAM algorithm and `launch_full_slam_stack.launch.py` launches this file along with the controller, lidar, camera and joystick.
+This package is used as a place for launch scripts. The `slam_toolbox.launch.py` starts up the SLAM algorithm and `launch_full_slam_stack.launch.py` launches the `slam_toolbox`, `controller`, `ldlidar_node`, `usb_cam` and `joystick_control`.
 
 ## peripherals
-The peripherals package contains:
-- code to use the joystick/teleop, can be launched via `joystick_control.launch.py` or `teleop_key_control.launch.py`
-- code to use the camera, can be launched via `usb_cam.launch.py` 
-- other code for debugging
+The peripherals package contains some code but mainly launch scripts to launch a multitude of different functionality:
+- `joystick_control.launch.py` launches a node which handles communication with the game controller.
+- `usb_cam.launch.py` launches the camera node. 
+- `apriltag.launch.py` launches the AprilTag detection. 
 
 ## simulations
 This package contains:
@@ -108,7 +108,7 @@ This package contains:
 
 
 # IMU Calibration Instructions
-The IMU is factory calibrated, however in our setup it is overwritten and replaced with a default file. Using the other calibration file works but isn't ideal.
+The IMU is factory calibrated, however in our setup it is overwritten and replaced with default values. Using the this calibration file works but may not yield ideal results.
 The IMU can be calibrated with the following steps. First, launch the controller:
 ```bash
 ros2 launch ros_robot_controller ros_robot_controller.launch.py
@@ -126,3 +126,7 @@ At the end of the calibration, you can check if the calibration worked with:
 ros2 launch peripherals imu_view.launch.py
 ```
 More info can be found here: https://drive.google.com/drive/folders/1qu4A3Uby4zEpbni56ReNzecZyhYH9-jl 
+
+# About this Repository
+This Repository is mainly based on the ROS2 workspace the robot ships with. It has been stripped of for our use "unimportant" packages and ported from ubuntu 22.4 to 24.04.
+You can access the whole documentation from Hiwonder here: https://drive.google.com/drive/folders/1Ox5xN5zpxXqDK-9ruDwwgcQgePXvMvHr?usp=sharing
