@@ -25,11 +25,12 @@ This repository aims to provide a reasonable starting position for ROS2 developm
       - [AprilTag Node](#apriltag-node)
    - [Test the LIDAR](#test-the-lidar)
    - [Test SLAM](#test-slam)
-- [Quality of Life Additions](#quality-of-life-additions)
+- [Quality of Life Additions and Some Tips](#quality-of-life-additions-and-some-tips)
    - [Terminator](#terminator)
    - [SSH Setup](#ssh-setup)
    - [rviz2](#rviz2)
    - [Multiple Robots on the Same Network](#multiple-robots-on-the-same-network)
+   - [About Standardization](#about-standardization)
    - [How To Start Development](#how-to-start-development)
 
 
@@ -468,7 +469,7 @@ You should now be able to move around with the robot while the map is continuous
 <br>
 <br>
 
-# Quality of Life Additions
+# Quality of Life Additions and Some Tips
 
 ## Terminator
 As you may already noticed, you often have to work with many terminals in paralel. A tiling terminal emulator can help with this. `Terminator` is a nice choice.
@@ -547,6 +548,9 @@ You can change the ID of your ROS2 client for example to id `10` with:
 export ROS_DOMAIN_ID=10
 ```
 
+## About Standardization
+Most things in ROS2 are standardized. This means there probably is a "standard way" to expose, for example, a topic on which velocity requests can be made. For this specific task, the topic is called `/cmd_vel` and has the type `geometry_msgs/Twist`. This standard naming and typing is mostly adhered to in this workspace. This also allows, for example, easy integration with standard ROS2 packages like `slam_toolbox`. This package expects odometry information to be published on `/odom` and a laser scan published on `/scan`. Both of these, of course, also have an expected type. Because the `controller` package that exposes the `/odom` topic adheres to this standard and `ldrobot-lidar-ros2` almost adheres to this (only the topic name needs to be changed via the launch script), integration is fairly easy. All of this is to say, if you also adhere to the sometimes unwritten rules of standard naming and typing, you can make your life a lot easier. 
+
 ## How To Start Development
 If you are ready to implement some code, here are some general tips and ideas to get you started.\
 * If you want to implement some functionality, it makes probably sense to organize it in a new package, with
@@ -559,4 +563,5 @@ ros2 pkg create <package_name> --build-type ament_cmake
 ```
 you create a new python package. **Make sure** you are inside your build folder (`ros_ws/src`), before entering these commands.
 
-* If you installed a package via the package manager, it is installed in `/opt/ros/jazzy/share`. Some standard launch and parameter files are usually given here. If you want to use such a "standard package" you most likely need to at least adjust the launch script and the parameter files. It is best practice to **not** modify installed packages in `/opt/ros/...`, instead you should organize them inside a package of your own workspace. In our structure, both the `orchestrator_launch` and the `peripherals` package are good places for this. You can copy the given launch scripts and parameter files from `/opt/ros/jazzy/share/package_name/` into one of these packages and launch the installed packages from there.  
+* If you installed a package via the package manager, it is installed in `/opt/ros/jazzy/share`. Some standard launch and parameter files are usually given here. If you want to use such a "standard package" you most likely need to at least adjust the launch script and the parameter files. It is best practice to **not** modify installed packages in `/opt/ros/...`, instead you should organize them inside a package of your own workspace. In our structure, both the `orchestrator_launch` and the `peripherals` package are good places for this. You can copy the given launch scripts and parameter files from `/opt/ros/jazzy/share/package_name/` into one of these packages and launch the installed packages from there.
+
